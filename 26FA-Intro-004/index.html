@@ -1,1 +1,742 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PHI-1011-004: Intro to Philosophy — Fall 2026</title>
+<style>
+  :root {
+    --paper: #ffffff;
+    --ink: #111111;
+    --rule: #111111;
+    --grid: #c7c7c7;
+    --gray-row: #f2f2f2;
+    --blue-row: #d7e4f4;
+    --break-row: #e4e4e4;
+    --highlight: #fff200;
+  }
 
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: #f3f4f6;
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    line-height: 1.22;
+  }
+
+  main {
+    width: min(100%, 8.5in);
+    margin: 0 auto;
+    background: var(--paper);
+    padding: 0.7in 0.64in 0.65in;
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.12);
+  }
+
+  h1, h2, h3, p { margin: 0; }
+
+  h1 {
+    font-size: 18pt;
+    font-weight: 400;
+    margin: 0 0 0.34in;
+    text-decoration: underline;
+    text-decoration-thickness: 0.75pt;
+    text-underline-offset: 2px;
+  }
+
+  h1 .small-caps {
+    font-size: 0.78em;
+    font-variant: small-caps;
+    letter-spacing: 0.02em;
+  }
+
+  h2 {
+    font-size: 18pt;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0.32in 0 0.06in;
+    border-bottom: 1.25pt solid var(--rule);
+    line-height: 1.05;
+  }
+
+  h3 {
+    font-size: 14pt;
+    font-weight: 700;
+    margin: 0.28in 0 0.02in;
+  }
+
+  p { margin: 0 0 0.14in; }
+
+  a { color: #0000ee; text-decoration: underline; }
+
+  .intro-block { margin-bottom: 0.3in; }
+  .gt-heading { font-weight: 700; margin-bottom: 0; }
+
+  .welcome-title {
+    display: inline-block;
+    font-size: 16pt;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-thickness: 0.75pt;
+    text-underline-offset: 2px;
+    margin: 0.26in 0 0.04in;
+  }
+
+  .key-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 0.13in;
+  }
+
+  .key-table td {
+    padding: 0.015in 0;
+    vertical-align: top;
+  }
+
+  .key-table td:first-child {
+    width: 34%;
+    padding-right: 0.18in;
+  }
+
+  .key-table td:last-child { font-weight: 700; }
+
+  .course-description {
+    margin-left: 0.5in;
+    margin-right: 0.15in;
+  }
+
+  .section-note { font-style: italic; margin-top: -0.02in; }
+  .centered-line { text-align: center; margin-top: 0; }
+  table { border-collapse: collapse; }
+
+  .calendar {
+    width: 100%;
+    table-layout: fixed;
+    margin-top: 0.22in;
+    font-size: 8.75pt;
+    line-height: 1.16;
+  }
+
+  .calendar col.date { width: 9%; }
+  .calendar col.unit { width: 17%; }
+  .calendar col.topic { width: 20%; }
+  .calendar col.reading { width: 33%; }
+  .calendar col.assessments { width: 21%; }
+
+  .calendar th {
+    background: #000;
+    color: #fff;
+    font-weight: 400;
+    text-align: left;
+    padding: 0.06in 0.035in;
+    border: 1px solid var(--grid);
+    vertical-align: top;
+  }
+
+  .calendar th span {
+    display: inline-block;
+    margin-top: 0.03in;
+    color: #000;
+    font-size: 6.9pt;
+    font-weight: 700;
+    background: var(--highlight);
+    text-decoration: underline;
+  }
+
+  .calendar td {
+    border: 1px solid var(--grid);
+    padding: 0.055in 0.035in;
+    vertical-align: top;
+  }
+
+  .calendar tr.gray td { background: var(--gray-row); }
+  .calendar tr.blue td { background: var(--blue-row); }
+  .calendar tr.noclass td {
+    background: var(--break-row);
+    font-style: italic;
+    text-align: center;
+  }
+  .calendar tr.noclass td.date-cell { text-align: left; font-style: normal; }
+
+  .calendar .date-cell { font-weight: 700; white-space: pre-line; }
+  .calendar .assess-cell { text-align: center; }
+
+  .calendar .due {
+    display: inline;
+    font-weight: 700;
+    background: var(--highlight);
+    line-height: 1.25;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  .calendar p { margin: 0 0 0.07in; }
+  .calendar p:last-child { margin-bottom: 0; }
+
+  .attendance-callout {
+    width: 86%;
+    margin: 0.28in auto 0.36in;
+    text-align: center;
+    font-size: 14pt;
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  .grade-breakdown {
+    width: 62%;
+    margin: 0.2in 0 0.18in 0.45in;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 12.5pt;
+  }
+
+  .grade-breakdown th {
+    background: #000;
+    color: #fff;
+    text-align: left;
+    border: 1px solid #000;
+    padding: 0.025in 0.08in;
+    font-weight: 700;
+  }
+
+  .grade-breakdown td {
+    border: 1px solid #000;
+    padding: 0.025in 0.08in;
+  }
+
+  .grade-breakdown td:first-child { font-weight: 700; }
+  .grade-breakdown td.sub { font-weight: 400; padding-left: 0.3in; }
+
+  .indent-paragraph { margin-left: 0.5in; margin-right: 0.18in; }
+  .email-example { margin: 0.22in 0 0.22in 0.5in; white-space: pre-line; }
+
+  .grade-scale { width: 100%; margin: 0.18in 0 0.24in; }
+  .grade-scale td { padding: 0.01in 0.22in 0.01in 0; vertical-align: top; }
+  .grade-scale td:nth-child(1) { width: 0.4in; }
+  .grade-scale td:nth-child(2) { width: 1.5in; }
+
+  .resources ul { margin: 0.02in 0 0 0.35in; padding-left: 0.15in; }
+  .resources li { margin: 0.01in 0; }
+  .resources p { margin-bottom: 0.01in; }
+
+  .policy-list { margin: 0.02in 0 0.14in 0.35in; padding-left: 0.15in; }
+  .policy-list li { margin: 0.02in 0; }
+
+  .standard-competencies { margin: 0.06in 0 0.55in 0.48in; padding-left: 0.2in; }
+  .standard-competencies li { padding-left: 0.04in; margin-bottom: 0.02in; }
+
+  .topical-outline { margin: 0.06in 0 0.3in 0.48in; padding-left: 0.2in; }
+  .topical-outline li { margin-bottom: 0.03in; }
+
+  .document-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 0.5in;
+    color: var(--ink);
+    font-size: 11pt;
+  }
+
+  .document-footer div:last-child { text-align: right; }
+  .nowrap { white-space: nowrap; }
+
+  .pdf-button {
+    position: fixed;
+    top: 0.22in;
+    right: 0.22in;
+    z-index: 10;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #fff;
+    background: #111;
+    border: 1.25pt solid #111;
+    padding: 0.07in 0.18in;
+    cursor: pointer;
+  }
+
+  .pdf-button:hover { background: #333; }
+
+  .pdf-button:focus-visible {
+    outline: 3px solid #0000ee;
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 760px) {
+    main { width: 100%; padding: 0.35in 0.18in; box-shadow: none; }
+    body { background: var(--paper); }
+    h1 { font-size: 16pt; }
+    h2 { font-size: 15pt; }
+    .calendar { display: block; overflow-x: auto; table-layout: auto; min-width: 940px; }
+    .key-table td:first-child { width: 40%; }
+    .grade-breakdown { width: 100%; margin-left: 0; }
+    .course-description, .indent-paragraph, .email-example { margin-left: 0.18in; }
+  }
+
+  @media print {
+    body { background: var(--paper); }
+    main { box-shadow: none; width: auto; margin: 0; padding: 0; }
+    .pdf-button { display: none; }
+    @page { size: letter; margin: 0.65in; }
+    h2, h3, tr { break-inside: avoid; }
+    a { color: #0000ee; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <button type="button" class="pdf-button" onclick="window.print()">Download as PDF</button>
+
+  <h1>PHI-1011-004: <span class="small-caps">Intro to Philosophy</span></h1>
+
+  <section class="intro-block">
+    <p>This abbreviated syllabus must be read together with the material within the Institutional Policies Module of the class D2L shell. Combined, these documents constitute the entire syllabus required for this course.</p>
+
+    <p class="gt-heading">Guaranteed Transfer (GT) Pathways Course Statement:</p>
+    <p>The Colorado Commission on Higher Education has approved PHI 1011 for inclusion in the Guaranteed Transfer (GT) Pathways program in the GT-AH3 category. For transferring students, successful completion with a minimum C&#8210; grade guarantees transfer and application of credit in this GT Pathways category. For more information on the GT Pathways program, go to <a href="https://highered.colorado.gov/academics/transfers/gtpathways/curriculum.html">https://highered.colorado.gov/academics/transfers/gtpathways/curriculum.html</a>.</p>
+
+    <div class="welcome-title">Welcome!</div>
+    <p>Welcome to Intro to Philosophy! In this course we will be delving into some of the most interesting and difficult problems in the history of human thinking. Questions include: What does it mean for an action to be right or good? What is free will? What are you? How should you use evidence to form opinions?</p>
+
+    <p>The <strong>number one tip for success</strong> in this class: <em>ENGAGE</em> &mdash; attend class, discuss with classmates, stay up to date with D2L, and above all reach out if you run into trouble.</p>
+
+    <p><strong>There is a bonus quiz in D2L based on this syllabus.</strong> It is the best way to start on a good foot as it gives your grade an early cushion and helps you familiarize yourself with what the course will be like.</p>
+
+    <p><em>Do not hesitate to reach out</em> with questions on course logistics or content! <strong>I am here to help!</strong></p>
+  </section>
+
+  <section>
+    <h2>Course Information</h2>
+    <table class="key-table">
+      <tr><td>Course Title:</td><td>Intro to Philosophy</td></tr>
+      <tr><td>Credits:</td><td>3</td></tr>
+      <tr><td>Course Description (from CCNS):</td><td></td></tr>
+    </table>
+    <p class="course-description">Introduces significant theoretical and practical questions and emphasizes understanding the meaning and methods of philosophy. Includes: the human condition, logic, reality, knowledge, freedom, history, ethics, and religion. This is a statewide Guaranteed Transfer course in the GT-AH3 category.</p>
+    <table class="key-table">
+      <tr><td>Semester &amp; Year:</td><td>Fall 2026</td></tr>
+      <tr><td>Meeting Location:</td><td>Cherry Creek (DCHR) 129</td></tr>
+      <tr><td>Times &amp; Days:</td><td>Tuesday/Thursday, 12:30-1:45pm</td></tr>
+      <tr><td>Start Date:</td><td>17 August</td></tr>
+      <tr><td>End Date:</td><td>7 December</td></tr>
+      <tr><td>Last date to drop with a refund:</td><td>2 September</td></tr>
+      <tr><td>Last date to withdraw:</td><td>12 November</td></tr>
+      <tr><td>Fall Holidays / Break:</td><td>7 September &ndash; Labor Day &ndash; No classes, campus/offices closed; 23 November &ndash; 27 November &ndash; Fall Break &ndash; No classes, campus/offices open except Thursday, 26 November</td></tr>
+    </table>
+    <p>For details on Parts of Term, please visit: <a href="https://www.ccd.edu/docs/schedule-parts-term">Parts of Term</a>.</p>
+  </section>
+
+  <section>
+    <h2>Instructor Information</h2>
+    <table class="key-table">
+      <tr><td>Name:</td><td>Professor Sean Conte, PhD</td></tr>
+      <tr><td>E-mail:</td><td><a href="mailto:Sean.Conte@ccd.edu">Sean.Conte@ccd.edu</a></td></tr>
+      <tr><td>Office Hours &amp; Location:</td><td>M/T/W/R 2:00-3:00pm (DCHR 313E)</td></tr>
+      <tr><td>Zoom link:</td><td><a href="https://cccs-edu.zoom.us/my/sean.conte">https://cccs-edu.zoom.us/my/sean.conte</a></td></tr>
+      <tr><td>Webex link:</td><td><a href="https://cccs-meetings.webex.com/meet/sean.conte1">https://cccs-meetings.webex.com/meet/sean.conte1</a></td></tr>
+      <tr><td>Arts, Communication and Design Pathway Main Phone Number:</td><td>303-352-6473</td></tr>
+    </table>
+
+    <p><strong>Course flow:</strong></p>
+    <p>This class is broken into two parts:</p>
+    <p class="indent-paragraph">First, we look at questions concerning what exists and in what ways. Specifically, what are you? What is a soul? But also, what does it mean to be free? Can machines/computers be free? Are you a machine?</p>
+    <p class="indent-paragraph">Second, we look at questions concerning how you should make up your mind concerning, well, anything. How should you use evidence to form your opinions? Who is trustworthy? What are the right ways &mdash; ethically and rationally &mdash; to use AI? What roles do falsification as well as creativity play in science?</p>
+    <p>If you keep up with the quizzes and participation, this class is easy to pass. If you do not keep up with those things, it will not be.</p>
+  </section>
+
+  <section>
+    <h2>Required Text/Course Materials/Technology</h2>
+    <ul class="policy-list">
+      <li>All readings are available via link in the below schedule. (Follow this closely throughout the semester.)</li>
+      <li>A PersonifyAI.app subscription (10$ for 1 semester) will be required for writing your final paper. This is non-negotiable and must be purchased early in the semester. YOU MUST USE YOUR SCHOOL EMAIL WHEN REGISTERING. (Further instructions will be provided in class.)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Course Calendar</h2>
+    <p class="section-note">The professor has the right to adjust the content and structure of the course.</p>
+    <table class="calendar">
+      <colgroup>
+        <col class="date">
+        <col class="unit">
+        <col class="topic">
+        <col class="reading">
+        <col class="assessments">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Unit</th>
+          <th>Topic</th>
+          <th>Reading etc.</th>
+          <th>Assessments<br><span>Important Due Dates are Bolded &amp; Highlighted</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="blue">
+          <td class="date-cell">8/18</td>
+          <td>Introductions</td>
+          <td></td>
+          <td>None</td>
+          <td class="assess-cell">Participation</td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">8/20</td>
+          <td>&ldquo;Learning to Be Me&rdquo;</td>
+          <td>Greg Egan &mdash; &ldquo;Learning to be Me&rdquo;</td>
+          <td><a href="https://drive.google.com/file/d/1HPqM_ETZEokt7hYHwfvFt9LWaXhnLRkc/view?usp=drive_link">&ldquo;Learning to Be Me&rdquo; pg 1-7</a></td>
+          <td class="assess-cell">Participation</td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">8/25</td>
+          <td>&ldquo;Learning to Be Me&rdquo;</td>
+          <td>Greg Egan &mdash; &ldquo;Learning to be Me&rdquo;</td>
+          <td><a href="https://drive.google.com/file/d/1Egl2QP1t6fIZuBtS1ZEisTyhDnNnL0lo/view?usp=drive_link">&ldquo;Learning to Be Me&rdquo; pg 8-13</a></td>
+          <td class="assess-cell">Participation</td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">8/27</td>
+          <td>&ldquo;Learning to Be Me&rdquo;</td>
+          <td>Greg Egan &mdash; &ldquo;Learning to be Me&rdquo;</td>
+          <td><a href="https://drive.google.com/file/d/1B7Jcb29VVZWZ1Hb28pJqJwLcalNN9U7r/view?usp=drive_link">&ldquo;Learning to Be Me&rdquo; pg 14-22</a></td>
+          <td class="assess-cell">Participation<br>+<br>Learning to Be Me Quiz</td>
+        </tr>
+        <tr class="blue">
+          <td class="date-cell">9/1</td>
+          <td>Personal Identity</td>
+          <td>Survivability &amp; the Self</td>
+          <td><a href="https://drive.google.com/file/d/1DEmYhJhyIquEVHPtkZRdJq2X9aI0uFZy/view?usp=drive_link">Perry (1978) &mdash; &ldquo;A Dialogue on Personal Identity and Immortality&rdquo; The First Night</a></td>
+          <td class="assess-cell">Participation<br><br><span class="due">9/2 &mdash; Census date; last day to drop with a refund</span></td>
+        </tr>
+        <tr class="blue">
+          <td class="date-cell">9/3</td>
+          <td>Personal Identity</td>
+          <td>Physical &amp; Psychological Continuity</td>
+          <td><a href="https://drive.google.com/file/d/1NVSrsA9cEaFat1iEjrIbzcZcPXhKL6zi/view?usp=drive_link">Perry (1978) &mdash; &ldquo;A Dialogue on Personal Identity and Immortality&rdquo; The Second Night</a></td>
+          <td class="assess-cell">Participation</td>
+        </tr>
+        <tr class="blue">
+          <td class="date-cell">9/8</td>
+          <td>Personal Identity</td>
+          <td>Hybrid Creatures &amp; Practical Questions</td>
+          <td><p><a href="https://drive.google.com/file/d/1NlzhZj8FTvNcFu4FqB5-wMUQnc_SxDO3/view?usp=drive_link">Perry (1978) &mdash; &ldquo;A Dialogue on Personal Identity and Immortality&rdquo; The Third Night</a></p><p>Optional:<br><a href="https://www.preposterousuniverse.com/podcast/2023/06/12/239-brian-lowery-on-the-social-self/">MindScape Podcast — Brian Lowery on the Social Self</a><br><a href="https://www.preposterousuniverse.com/podcast/2020/02/10/83-kwame-anthony-appiah-on-identity-stories-and-cosmopolitanism/">MindScape Podcast — Kwame Anthony Appiah on Identity, Stories, and Cosmopolitanism</a></p></td>
+          <td class="assess-cell">Participation<br>+<br>Personal Identity Quiz</td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">9/10</td>
+          <td>Free Will</td>
+          <td>The Problem of Free Will</td>
+          <td><a href="https://drive.google.com/file/d/13ftGnhWXcYnt4jX6ZnNeRMcG0V4XlUFj/view?usp=drive_link">Kane (2005) &mdash; <em>A Contemporary Introduction to Free Will</em>, Chapter 1</a></td>
+          <td class="assess-cell">Participation</td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">9/15</td>
+          <td>Free Will</td>
+          <td>Compatibilism</td>
+          <td><a href="https://drive.google.com/file/d/1ohxPxv17BU-fpd8ahxAwVWE9PLgqBPyz/view?usp=drive_link">Kane (2005) &mdash; <em>A Contemporary Introduction to Free Will</em>, Chapter 2</a></td>
+          <td class="assess-cell">Participation</td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">9/17</td>
+          <td>Free Will</td>
+          <td>Incompatibilism</td>
+          <td><p><a href="https://drive.google.com/file/d/1GZbDnbllS00-X1BOPkSXMdPDhUAQopUY/view?usp=drive_link">Kane (2005) &mdash; <em>A Contemporary Introduction to Free Will</em>, Chapter 3</a></p><p>Optional:<br><a href="https://www.preposterousuniverse.com/podcast/2024/07/01/281-samir-okasha-on-the-philosophy-of-agency-and-evolution/">MindScape Podcast — Samir Okasha on the Philosophy of Agency and Evolution</a><br><a href="https://www.preposterousuniverse.com/podcast/2023/01/30/225-michael-tomasello-on-the-social-origins-of-cognition-and-agency/">MindScape Podcast — Michael Tomasello on The Social Origins of Cognition and Agency</a></p></td>
+          <td class="assess-cell">Participation<br>+<br>Free Will Quiz</td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">9/22</td>
+          <td>Free Will</td>
+          <td>Fish Bowl</td>
+          <td>None</td>
+          <td class="assess-cell">Participation</td>
+        </tr>
+        <tr class="blue">
+          <td class="date-cell">9/24</td>
+          <td>Mereology &amp; Emergence</td>
+          <td>Universalism, Nihilism, and Special Composition Theory</td>
+          <td><a href="https://drive.google.com/file/d/1cytUdPVo3nOfxmlRaA6WQwTNkRuLOaJb/view?usp=drive_link">Mereology Lecture Notes</a></td>
+          <td class="assess-cell">Participation</td>
+        </tr>
+        <tr class="blue">
+          <td class="date-cell">9/29</td>
+          <td>Mereology &amp; Emergence</td>
+          <td>Many Models of Description</td>
+          <td><p><a href="https://drive.google.com/file/d/1cytUdPVo3nOfxmlRaA6WQwTNkRuLOaJb/view?usp=drive_link">Mereology Lecture Notes</a></p><p>Optional:<br><a href="https://www.preposterousuniverse.com/podcast/2019/02/11/episode-33-james-ladyman-on-reality-metaphysics-and-complexity/">MindScape Podcast — James Ladyman on Reality, Metaphysics, and Complexity</a><br><a href="https://www.preposterousuniverse.com/podcast/2024/11/11/295-solo-emergence-and-layers-of-reality/">MindScape Podcast — Solo: Emergence and Layers of Reality</a><br><a href="http://preposterousuniverse.com/podcast/2020/01/06/78-daniel-dennett-on-minds-patterns-and-the-scientific-image/">MindScape Podcast — Daniel Dennett on Minds, Patterns, and the Scientific Image</a><br><a href="https://www.netlogoweb.org/launch#https://www.netlogoweb.org/assets/modelslib/Sample%20Models/Biology/Ants.nlogox">NetLogo&rsquo;s emergence simulations</a></p></td>
+          <td class="assess-cell">Participation<br>+<br>Mereology &amp; Emergence Quiz</td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">10/1</td>
+          <td>Artificial Intelligence</td>
+          <td>Turing</td>
+          <td><p><a href="https://drive.google.com/file/d/1_eSlK_V5JQDTA_MU7g-AnJNDNCUW7i34/view?usp=drive_link">Turing (1950) &mdash; &ldquo;Computing Machinery and Intelligence&rdquo; Sections 1,2,3, and 6</a></p><p>Optional:<br><a href="https://www.preposterousuniverse.com/podcast/2023/03/20/230-raphael-milliere-on-how-artificial-intelligence-thinks/">MindScape Podcast — Rapha&euml;l Milli&egrave;re on How Artificial Intelligence Thinks</a><br><a href="https://www.preposterousuniverse.com/podcast/2024/08/19/286-blaise-aguera-y-arcas-on-the-emergence-of-replication-and-computation/">MindScape Podcast — Blaise Ag&uuml;era y Arcas on the Emergence of Replication and Computation</a></p></td>
+          <td class="assess-cell">Participation</td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">10/6</td>
+          <td>Artificial Intelligence</td>
+          <td>Searle</td>
+          <td><a href="https://drive.google.com/file/d/1xlONyLnRtXENbXqjBWLdoBubIp8HMNkd/view?usp=drive_link">Searle&rsquo;s Chinese Room Argument &amp; Responses</a></td>
+          <td class="assess-cell">Participation</td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">10/8</td>
+          <td>Artificial Intelligence</td>
+          <td>Turing &amp; Searle</td>
+          <td><p><a href="https://drive.google.com/file/d/1_eSlK_V5JQDTA_MU7g-AnJNDNCUW7i34/view?usp=drive_link">Turing (1950) &mdash; &ldquo;Computing Machinery and Intelligence&rdquo; Sections 1,2,3, and 6</a></p><p><a href="https://drive.google.com/file/d/1xlONyLnRtXENbXqjBWLdoBubIp8HMNkd/view?usp=drive_link">Searle&rsquo;s Chinese Room Argument &amp; Responses</a></p></td>
+          <td class="assess-cell">Participation<br>+<br>Artificial Intelligence Quiz<br>+<br><span class="due">Start Final Paper Notes in Personify</span></td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">10/13</td>
+          <td>Artificial Intelligence</td>
+          <td>Fishbowl</td>
+          <td>None</td>
+          <td class="assess-cell">Participation</td>
+        </tr>
+        <tr class="blue">
+          <td class="date-cell">10/15</td>
+          <td>Evidentialism &amp; Induction</td>
+          <td>Clifford&rsquo;s Evidentialism</td>
+          <td><a href="https://drive.google.com/file/d/1mobUXtsrTIO-g3PMsNEp-SsaAHuRXYQK/view?usp=drive_link">Clifford (1877) &mdash; &ldquo;The Ethics of Belief&rdquo;</a></td>
+          <td class="assess-cell">Participation</td>
+        </tr>
+        <tr class="blue">
+          <td class="date-cell">10/20</td>
+          <td>Evidentialism &amp; Induction</td>
+          <td>The Problem of Induction</td>
+          <td><p><a href="https://drive.google.com/file/d/13bNRBYab-Xfp6eI4-tgc87WzXROvwaic/view?usp=drive_link">Papineau (2004) — <em>The Blackwell Companion to Philosophy</em>, &ldquo;Philosophy of Science&rdquo; Section 1.1</a></p><p><a href="https://www.preposterousuniverse.com/podcast/2019/12/09/76-ned-hall-on-possible-worlds-and-the-laws-of-nature/">MindScape Podcast — Ned Hall on Possible Worlds and the Laws of Nature</a></p></td>
+          <td class="assess-cell">Participation<br>+<br>The Problem of Induction Quiz</td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">10/22</td>
+          <td>Falsificationism</td>
+          <td>Popper&rsquo;s Falsificationism</td>
+          <td><p><a href="https://drive.google.com/file/d/13bNRBYab-Xfp6eI4-tgc87WzXROvwaic/view?usp=drive_link">Papineau (2004) — <em>The Blackwell Companion to Philosophy</em>, &ldquo;Philosophy of Science&rdquo; Section 1.2</a></p><p>Optional:<br><a href="https://www.preposterousuniverse.com/podcast/2023/10/16/253-david-deutsch-on-science-complexity-and-explanation/">MindScape Podcast — David Deutsch on Science, Complexity, and Explanation</a></p></td>
+          <td class="assess-cell">Participation</td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">10/27</td>
+          <td>Falsificationism</td>
+          <td>Failings of Falsificationism</td>
+          <td><p><a href="https://drive.google.com/file/d/13bNRBYab-Xfp6eI4-tgc87WzXROvwaic/view?usp=drive_link">Papineau (2004) — <em>The Blackwell Companion to Philosophy</em>, &ldquo;Philosophy of Science&rdquo; Section 1.3</a></p><p>Optional:<br><a href="https://www.preposterousuniverse.com/podcast/2023/10/16/253-david-deutsch-on-science-complexity-and-explanation/">MindScape Podcast — David Deutsch on Science, Complexity, and Explanation</a></p></td>
+          <td class="assess-cell">Participation<br>+<br>Popper&rsquo;s Falsificationism Quiz</td>
+        </tr>
+        <tr class="blue">
+          <td class="date-cell">10/29</td>
+          <td>Permissivism, Paradigms, and Epistemic Virtues</td>
+          <td>James&rsquo;s Permissivism</td>
+          <td><a href="https://drive.google.com/file/d/1ed9uGxZYOoVCjyb2-W4ESFLAG-5c8Cxj/view?usp=drive_link">James (1896) &mdash; &ldquo;The Will to Believe&rdquo;</a></td>
+          <td class="assess-cell">Participation</td>
+        </tr>
+        <tr class="blue">
+          <td class="date-cell">11/3</td>
+          <td>Permissivism, Paradigms, and Epistemic Virtues</td>
+          <td>Kuhn, Paradigms, and Epistemic Virtues</td>
+          <td><a href="https://drive.google.com/file/d/13bNRBYab-Xfp6eI4-tgc87WzXROvwaic/view?usp=drive_link">Papineau (2004) — <em>The Blackwell Companion to Philosophy</em>, &ldquo;Philosophy of Science&rdquo; Section 1.6-1.7</a></td>
+          <td class="assess-cell">Participation<br>+<br>Kuhn, Paradigms, and Epistemic Virtues Quiz</td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">11/5</td>
+          <td>Peer Outline Review</td>
+          <td></td>
+          <td>Instructions for final paper</td>
+          <td class="assess-cell">Participation<br>+<br><span class="due">Final Paper Outline</span></td>
+        </tr>
+        <tr class="blue">
+          <td class="date-cell">11/10</td>
+          <td>Naturalized Epistemology</td>
+          <td>Bayesianism</td>
+          <td><p><a href="https://drive.google.com/file/d/13bNRBYab-Xfp6eI4-tgc87WzXROvwaic/view?usp=drive_link">Papineau (2004) — <em>The Blackwell Companion to Philosophy</em>, &ldquo;Philosophy of Science&rdquo; Section 1.4</a></p><p>Optional:<br><a href="https://www.preposterousuniverse.com/podcast/2024/08/12/285-nate-silver-on-prediction-risk-and-rationality/">MindScape Podcast — Nate Silver on Prediction, Risk, and Rationality</a></p></td>
+          <td class="assess-cell">Participation</td>
+        </tr>
+        <tr class="blue">
+          <td class="date-cell">11/12</td>
+          <td>Naturalized Epistemology</td>
+          <td>Naturalized Epistemology</td>
+          <td><p><a href="https://drive.google.com/file/d/13bNRBYab-Xfp6eI4-tgc87WzXROvwaic/view?usp=drive_link">Papineau (2004) — <em>The Blackwell Companion to Philosophy</em>, &ldquo;Philosophy of Science&rdquo; Section 1.9</a></p><p>Optional:<br><a href="https://www.preposterousuniverse.com/podcast/2020/05/04/95-liam-kofi-bright-on-knowledge-truth-and-science/">MindScape Podcast — Liam Kofi Bright on Knowledge, Truth, and Science</a><br><a href="https://www.preposterousuniverse.com/podcast/2025/02/10/304-james-evans-on-innovation-consolidation-and-the-science-of-science/">MindScape Podcast — James Evans on Innovation, Consolidation, and the Science of Science</a></p></td>
+          <td class="assess-cell">Participation<br>+<br>Naturalized Epistemology Quiz<br><br><span class="due">11/12 &mdash; last day to withdraw</span></td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">11/17</td>
+          <td>Social &amp; Network Epistemology</td>
+          <td>Social Epistemology</td>
+          <td><a href="https://drive.google.com/file/d/12BZP_6P3wde9JoiCxptExr6HKB7Mx2fJ/view?usp=drive_link">Kitcher (1990) &mdash; &ldquo;The Division of Cognitive Labor&rdquo; intro</a></td>
+          <td class="assess-cell">Participation</td>
+        </tr>
+        <tr class="blue">
+          <td class="date-cell">11/19</td>
+          <td>Peer Paper Review</td>
+          <td></td>
+          <td>Instructions for final paper</td>
+          <td class="assess-cell">Participation<br>+<br><span class="due">Final Paper</span></td>
+        </tr>
+        <tr class="noclass">
+          <td class="date-cell">11/24<br>11/26</td>
+          <td colspan="4">Fall Break &mdash; No classes (campus/offices open except Thursday, 11/26)</td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">12/1</td>
+          <td>Social &amp; Network Epistemology</td>
+          <td>Network Epistemology</td>
+          <td>None</td>
+          <td class="assess-cell">Participation</td>
+        </tr>
+        <tr class="blue">
+          <td class="date-cell">12/3</td>
+          <td>Final Discussion (optional day)</td>
+          <td></td>
+          <td>None</td>
+          <td class="assess-cell"><span class="due">Revised Final Paper</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Course Specific Policies and Information</h2>
+    <h3>Attendance</h3>
+    <p>Regular attendance in all course activities is critical for academic success. Please review the <a href="https://www.ccd.edu/administration/non-academic-departments/office-registration-records/college-non-attendance-policy">College Non-Attendance Policy</a>.</p>
+
+    <p>Students establish attendance by completing an academic activity based on course content. As defined by the Federal Department of Education, merely logging into the course site or introducing oneself to the class does not count as attendance. Some examples of successfully attending class include participation in a content-related discussion in class or in the D2L discussion board, taking a quiz, submitting an assignment, or contacting your instructor with a content related question. Students who have not participated by 11:59 PM on the deadline date will be dropped. Similarly, the last date of academic attendance must be reported to Financial Aid for students who do not earn a D or better; students who have not been in regular attendance may experience financial aid ramifications.</p>
+
+    <p>See participation below.</p>
+
+    <h3>Course Assignments</h3>
+    <p>Your grade is made up of the following categories:</p>
+    <table class="grade-breakdown">
+      <thead>
+        <tr><th>Activities</th><th>Contribution to Overall Grade</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Participation</td><td>30%</td></tr>
+        <tr><td>Quizzes</td><td>30%</td></tr>
+        <tr><td>Final Paper</td><td>40%</td></tr>
+        <tr><td class="sub">Personify Notes</td><td>10%</td></tr>
+        <tr><td class="sub">Outline &amp; Review</td><td>10%</td></tr>
+        <tr><td class="sub">Paper &amp; Review</td><td>10%</td></tr>
+        <tr><td class="sub">Revised Paper</td><td>10%</td></tr>
+      </tbody>
+    </table>
+
+    <p class="indent-paragraph"><strong>Participation</strong> - The participation grade is earned by actively engaging in the daily in-class activities. These activities include the following: class discussions/debates, peer writing evaluation workshops, group critical analysis sessions, and others.</p>
+
+    <p class="indent-paragraph"><strong>Quizzes</strong> - There are quizzes for every topic we cover, all of which are on D2L. These are due at the end of their respective units. This is meant to allow you significant flexibility, but you still need to stay up to date on them. If you wait till the deadline and some issue arises, you will very likely <em>not</em> get a mass extension on all of the quizzes.</p>
+
+    <p class="indent-paragraph"><strong>Final Paper</strong> - The final paper is where you demonstrate the skills you&rsquo;ve developed on the question you chose. It <em>is not</em> graded just on the final product, but on how you meet milestones and build on feedback through an iterative process. You will be required to start halfway through the semester, and there will be two peer review sessions (one on outlines and another on the paper itself) to help you develop your ideas and skills.</p>
+
+    <h3>Late work policies</h3>
+    <p>I grant at most one extension for an assignment, and generally speaking I do not grant mass extensions. That means if you miss submitting an entire unit of quizzes, then I will likely only grant an extension on one. Peer review sessions must be attended to receive credit, and they cannot be made up after the fact.</p>
+
+    <p>Each extension is contingent on being <em>professional</em>. As college students, you should recognize yourselves as professional students. (Anything less, and you&rsquo;re not fully appreciating the level of investment you&rsquo;re making.) That means I expect you to communicate timely, clearly, and respectfully. In addition, it means you have realistic standards for yourself and your instructors. I will work with you on extensions so long as you are professional in your requests and expectations. Here&rsquo;s an example of a bad email:</p>
+
+    <p class="email-example">&ldquo;hey I missed Thursday three weeks ago&rdquo;</p>
+
+    <p>Can you spot all of the errors? The recipient isn&rsquo;t addressed. There is no signature. It is not clear which class or section the student is in. The first letter isn&rsquo;t capitalized, and there&rsquo;s no punctuation. These are all issues that might seem small but show a lack of attention to detail and likewise a lack of respect for the recipient. Worst of all, there is no actual question. It is just a statement, meaning it is asking the recipient (i.e. the instructor) to figure out what you need and what you&rsquo;re looking for. Finally, this email is way too late. If you (expect to) miss a deadline, you need to handle it as soon as possible. Here is a better approach:</p>
+
+    <p class="email-example">&ldquo;Dear Dr. Conte,
+I hope this finds you well. I am in your PHI-1011-004 class. You may have noticed I was unable to submit my finished paper by the deadline on Thursday (Nov 19). If possible, I would sincerely appreciate an extension to submit the assignment for full or partial credit until the following Tuesday (Dec 1). I understand that it is my responsibility to complete assignments by the due date and there is no guarantee that I get an extension.
+
+Thank you for your consideration and have a great day!
+Billy Pilgrim
+S0123456789&rdquo;</p>
+
+    <h3>Plagiarism and Artificial Intelligence (AI)</h3>
+    <p><strong>Plagiarism.</strong> If you are having difficulty with a paper or MLA citations, please communicate with me. I&rsquo;ll be glad to work with you. Plagiarism, in my view, is something students resort to when they feel desperate. If you are behind, not sure you understand the assignment, are struggling with the assignment, don&rsquo;t understand how the MLA citation system works, or a similar situation, please get in touch with me. We will work one-on-one to get you back on track. This is a much better solution than turning in work which is not yours. Many students don&rsquo;t always realize that in academic communities, plagiarism is a serious offense, and is grounds for failing an assignment or course and/or disciplinary action. Plagiarism means copying passages directly from the text of any source, without quotation marks and citations, or not citing summarized or paraphrased information. The written work you submit must be original: written entirely by you alone and not previously submitted in another class. All quotations, summaries and paraphrases (restatements of others&rsquo; ideas) need to be cited within your paper. No credit will be given for plagiarized papers and/or assignments. Students who plagiarize will be referred to the Provost.</p>
+
+    <p><strong>Artificial Intelligence (AI).</strong></p>
+    <p>Imagine asking someone, &ldquo;Hey, I&rsquo;m hungry. Could you go eat lunch for me?&rdquo;. You&rsquo;re not asking if they&rsquo;ll bring you lunch. You&rsquo;re asking that they will eat lunch and in doing so satisfy your hunger. Absurd, right? Someone else eating doesn&rsquo;t do anything for your empty stomach.</p>
+
+    <p>Now imagine doing the same for learning. &ldquo;Hey, I&rsquo;d like to learn how to swim. Could you learn how for me?&rdquo; If the only thing that happens is your friend learns how to swim, you should still steer clear of the deep end.</p>
+
+    <p>There are some things that cannot be done for you. Learning is one of these things. Your use of external resources -whatever they are- should always be done in service of your learning, helping you master the material and skills better.</p>
+
+    <p>Completing assignments with regurgitated LLM responses will not lead to you learning (nor passing).</p>
+
+    <h3>Other Policies</h3>
+    <p>The professor reserves the right to change this syllabus (and course) at any time.</p>
+  </section>
+
+  <section>
+    <h2>Grade Scale</h2>
+    <table class="grade-scale">
+      <tr><td><strong>A</strong></td><td>90-100%</td><td>Superior mastery or achievement.</td></tr>
+      <tr><td><strong>B</strong></td><td>80-89%</td><td>Better than average mastery or achievement.</td></tr>
+      <tr><td><strong>C</strong></td><td>70-79%</td><td>Acceptable mastery or achievement.</td></tr>
+      <tr><td><strong>D</strong></td><td>60-69%</td><td>Less than acceptable mastery or achievement.</td></tr>
+      <tr><td><strong>F</strong></td><td>Below 60%</td><td>Fails to demonstrate achievement of course objectives.</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Point Distribution</h2>
+    <p>This course is weighted by category rather than by a fixed point total. Your overall grade is the weighted average of the categories listed under Course Assignments above: Participation (30%), Quizzes (30%), and the Final Paper sequence (40%, split evenly across four milestones &mdash; the Personify Notes, the Outline &amp; Review, the Paper &amp; Review, and the Revised Paper). Individual assignment point values are shown in D2L, and the D2L gradebook is configured to match these weights.</p>
+  </section>
+
+  <section>
+    <h2>Institutional Outcomes</h2>
+    <p>Graduates of the Community College of Denver are prepared to be successful on a personal, professional, and global level. For a full description of these institutional outcomes please see Institutional Policies module on this courses D2L shell.</p>
+
+    <p>In this class we will focus on:</p>
+
+    <p><strong>Effective Communication:</strong> Students will communicate a central guiding idea to a defined audience, for a concrete purpose, employing effective conventions in the service of meaning.</p>
+
+    <p><strong>Critical Thinking:</strong> Students will analyze information and ideas from multiple perspectives and articulate an argument or opinion or a conclusion based on that analysis</p>
+
+    <p><strong>Intercultural Literacy:</strong> Students will apply a set of cognitive, affective, and behavioral skills to effectively interact in a variety of cultural contexts.</p>
+  </section>
+
+  <section class="resources">
+    <h2>Student Resources</h2>
+    <p>CCD has several resources for students. See the list below and/or reach out to the instructor with any needs.</p>
+    <ul>
+      <li><strong>Online Tutoring</strong>: Sessions are available at <a href="http://ccd.edu/ExcelOnlineTutor">Excel! Zone</a></li>
+      <li><strong>Advising</strong>: Schedule a virtual appointment with academic advisors by emailing <a href="mailto:Advising@ccd.edu">Advising@ccd.edu</a></li>
+      <li><strong>IT Help Desk</strong>: Email <a href="mailto:HelpDesk@ccd.edu">HelpDesk@ccd.edu</a> or call (303) 352-3030</li>
+      <li><strong>Accessibility Center</strong>: Please reach out to your Specialist first and/or <a href="mailto:ccd.access@ccd.edu">ccd.access@ccd.edu</a></li>
+      <li><strong>Teaching &amp; Learning Center</strong>: <a href="https://ccd.yuja.com/Library/a97421c4-5504-4167-acd1-bc8dc00d79d6">D2L Introduction Videos for Students</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Standard Competencies/Outcomes</h2>
+    <ol class="standard-competencies">
+      <li>Distinguish and critically evaluate the major schools of philosophy.</li>
+      <li>Demonstrate an understanding of the methods of philosophical thinking.</li>
+      <li>Critically evaluate primary philosophical sources.</li>
+      <li>Apply philosophical theories to current issues.</li>
+      <li>Demonstrate philosophical/logical thinking through writing and other forms of assessment.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Topical Outline</h2>
+    <ol class="topical-outline" type="I">
+      <li>What is Philosophy?
+        <ol type="A">
+          <li>Definition</li>
+          <li>Branches of Philosophy</li>
+          <li>Applications of Philosophy</li>
+        </ol>
+      </li>
+      <li>Logic
+        <ol type="A"><li>The Major Theories and Issues of Logic</li></ol>
+      </li>
+      <li>Epistemology
+        <ol type="A"><li>The Major Theories and Issues of epistemology</li></ol>
+      </li>
+      <li>Metaphysics
+        <ol type="A"><li>The Major Theories and Issues of metaphysics</li></ol>
+      </li>
+      <li>Ethics
+        <ol type="A"><li>The Major Theories and Issues of Ethics</li></ol>
+      </li>
+    </ol>
+  </section>
+
+  <footer class="document-footer">
+    <div>Revised 8/12/2026</div>
+    <div>PRO-21</div>
+  </footer>
+</main>
+</body>
+</html>
