@@ -246,6 +246,28 @@
   .document-footer div:last-child { text-align: right; }
   .nowrap { white-space: nowrap; }
 
+  .pdf-button {
+    position: fixed;
+    top: 0.22in;
+    right: 0.22in;
+    z-index: 10;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #fff;
+    background: #111;
+    border: 1.25pt solid #111;
+    padding: 0.07in 0.18in;
+    cursor: pointer;
+  }
+
+  .pdf-button:hover { background: #333; }
+
+  .pdf-button:focus-visible {
+    outline: 3px solid #0000ee;
+    outline-offset: 2px;
+  }
+
   @media (max-width: 760px) {
     main { width: 100%; padding: 0.35in 0.18in; box-shadow: none; }
     body { background: var(--paper); }
@@ -260,6 +282,7 @@
   @media print {
     body { background: var(--paper); }
     main { box-shadow: none; width: auto; margin: 0; padding: 0; }
+    .pdf-button { display: none; }
     @page { size: letter; margin: 0.65in; }
     h2, h3, tr { break-inside: avoid; }
     a { color: #0000ee; }
@@ -268,6 +291,8 @@
 </head>
 <body>
 <main>
+  <button type="button" class="pdf-button" onclick="window.print()">Download as PDF</button>
+
   <h1>PHI-1012-70L: <span class="small-caps">Ethics</span></h1>
 
   <section class="intro-block">
@@ -367,14 +392,14 @@
         <tr class="blue">
           <td class="date-cell">Week 2<br>9/7-9/11</td>
           <td>Moral Reasoning</td>
-          <td><p>Lecture Notes</p><p>Optional:<br>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 2: Moral Reasoning</p></td>
+          <td><p><a href="https://drive.google.com/file/d/140JgCHOnpFirqbIL2g3Ao6OTHLmRtYWg/view?usp=drive_link">Lecture Notes</a></p><p>Optional:<br>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 2: Moral Reasoning</p></td>
           <td>Understand what logic, inferences, and arguments are.</td>
           <td class="assess-cell">Moral Reasoning Discussion<br>+<br>Moral Reasoning Quiz</td>
         </tr>
         <tr class="gray">
           <td class="date-cell">Week 3<br>9/14-9/18</td>
           <td>Moral Skepticism</td>
-          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 3: Moral Skepticism, sections on “Relativism” &amp; “Error Theory”</p><p>Optional:<br>MindScape Podcast — Russ Shafer-Landau on the Reality of Morality</p></td>
+          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 3: Moral Skepticism, sections on “Relativism” &amp; “Error Theory”</p><p>Optional:<br><a href="https://www.preposterousuniverse.com/podcast/2020/07/27/107-russ-shafer-landau-on-the-reality-of-morality/">MindScape Podcast — Russ Shafer-Landau on the Reality of Morality</a></p></td>
           <td>Understand the core motivations and concerns for relativism and error theory (and the difference between the two). Apply these theories to your (potential) final topics.</td>
           <td class="assess-cell">Moral Skepticism Discussion<br>+<br>Moral Skepticism Quiz<br><br><span class="due">9/15 — Census date; last day to drop with a refund</span></td>
         </tr>
@@ -388,14 +413,14 @@
         <tr class="gray">
           <td class="date-cell">Week 5<br>9/28-10/2</td>
           <td>Consequentialism, Part 1</td>
-          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 5: Consequentialism</p><p>Optional:<br>MindScape Podcast — Joshua Greene on Morality, Psychology, and Trolley Problems</p></td>
+          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 5: Consequentialism</p><p>Optional:<br><a href="https://www.preposterousuniverse.com/podcast/2021/12/06/176-joshua-greene-on-morality-psychology-and-trolley-problems/">MindScape Podcast — Joshua Greene on Morality, Psychology, and Trolley Problems</a></p></td>
           <td>Distinguish utilitarianism from the larger class of consequentialist theories. Understand the core tenets of consequentialism and how outcomes get weighed. Analyze your (potential) final topics in a consequentialist lens.</td>
           <td class="assess-cell">Consequentialism Discussion, Part 1<br>+<br>Consequentialism Quiz, Part 1</td>
         </tr>
         <tr class="blue">
           <td class="date-cell">Week 6<br>10/5-10/9</td>
           <td>Consequentialism, Part 2</td>
-          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 5: Consequentialism</p><p>Optional:<br>MindScape Podcast — William MacAskill on Maximizing Good in the Present and Future</p></td>
+          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 5: Consequentialism</p><p>Optional:<br><a href="https://www.preposterousuniverse.com/podcast/2022/08/15/207-william-macaskill-on-maximizing-good-in-the-present-and-future/">MindScape Podcast — William MacAskill on Maximizing Good in the Present and Future</a></p></td>
           <td>Work through the standard objections: sacrifice and partiality, the trolley problems, and the argument from injustice. Evaluate how a consequentialist might answer each.</td>
           <td class="assess-cell">Consequentialism Discussion, Part 2<br>+<br>Consequentialism Quiz, Part 2</td>
         </tr>
@@ -409,7 +434,7 @@
         <tr class="blue">
           <td class="date-cell">Week 8<br>10/19-10/23</td>
           <td>Deontology, Part 2</td>
-          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 6: Kantian Ethics</p><p>Optional:<br>MindScape Podcast — Justin Clarke-Doane on Mathematics, Morality, Objectivity, and Reality</p></td>
+          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 6: Kantian Ethics</p><p>Optional:<br><a href="https://www.preposterousuniverse.com/podcast/2021/03/08/137-justin-clarke-doane-on-mathematics-morality-objectivity-and-reality/">MindScape Podcast — Justin Clarke-Doane on Mathematics, Morality, Objectivity, and Reality</a></p></td>
           <td>Apply the requirement to treat persons as ends, and examine autonomy and the limits of respect. Devise rule systems with which to analyze your final paper topics.</td>
           <td class="assess-cell">Deontology Discussion, Part 2<br>+<br>Deontology Quiz, Part 2</td>
         </tr>
@@ -423,21 +448,21 @@
         <tr class="blue">
           <td class="date-cell">Week 10<br>11/2-11/6</td>
           <td>Social Contract Theory: Hobbes</td>
-          <td>Friend — Internet Encyclopedia of Philosophy, “Social Contract Theory”, 2a</td>
+          <td><a href="https://iep.utm.edu/soc-cont/#SH2a">Friend — Internet Encyclopedia of Philosophy, “Social Contract Theory”, 2a</a></td>
           <td>Understand Hobbes’s foundation for government and apply it to specific practices of governments. Evaluate Hobbes’s approach for its strengths and weaknesses.</td>
           <td class="assess-cell">Outline Review Discussion<br>+<br>Hobbes Quiz<br>+<br><span class="due">Final Paper Outline</span></td>
         </tr>
         <tr class="gray">
           <td class="date-cell">Week 11<br>11/9-11/13</td>
           <td>Social Contract Theory: Locke</td>
-          <td>Friend — Internet Encyclopedia of Philosophy, “Social Contract Theory”, 2b</td>
+          <td><a href="https://iep.utm.edu/soc-cont/#SH2b">Friend — Internet Encyclopedia of Philosophy, “Social Contract Theory”, 2b</a></td>
           <td>Understand Locke’s foundation for government and apply it to specific practices of governments. Contrast Locke’s approach with Hobbes’s.</td>
           <td class="assess-cell">Draft Review Discussion<br>+<br>Locke Quiz<br>+<br><span class="due">Final Paper</span></td>
         </tr>
         <tr class="blue">
           <td class="date-cell">Week 12<br>11/16-11/20</td>
           <td>Social Contract Theory: Rousseau</td>
-          <td>Friend — Internet Encyclopedia of Philosophy, “Social Contract Theory”, 2c</td>
+          <td><a href="https://iep.utm.edu/soc-cont/#SH2c">Friend — Internet Encyclopedia of Philosophy, “Social Contract Theory”, 2c</a></td>
           <td>Recall the difference between descriptive and normative theories, and understand Rousseau’s account of each. Compare each of the social contract theorists, evaluating what they do well and poorly.</td>
           <td class="assess-cell">Social Contract Theory Discussion<br>+<br>Rousseau Quiz<br><br><span class="due">11/17 — last day to withdraw</span></td>
         </tr>
@@ -448,7 +473,7 @@
         <tr class="gray">
           <td class="date-cell">Week 13<br>11/30-12/4</td>
           <td>Frontier AI Ethics</td>
-          <td>Lazar (2024) — <em>Aeon</em> “Frontier AI Ethics”</td>
+          <td><a href="https://drive.google.com/file/d/1bcf_vH_W-Qi48M-H_L7U7jM1sKBxCvRK/view?usp=drive_link">Lazar (2024) — <em>Aeon</em> “Frontier AI Ethics”</a></td>
           <td>Apply the frameworks from the whole course to a live and unsettled case. Evaluate which approaches help most where the empirical facts are still contested and the stakes are not yet clear.</td>
           <td class="assess-cell">Frontier AI Ethics Discussion<br>+<br>Frontier AI Ethics Quiz<br><br><span class="due">Revised Final Paper Due 12/7 @ midnight</span></td>
         </tr>
