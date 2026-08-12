@@ -241,6 +241,28 @@
   .document-footer div:last-child { text-align: right; }
   .nowrap { white-space: nowrap; }
 
+  .pdf-button {
+    position: fixed;
+    top: 0.22in;
+    right: 0.22in;
+    z-index: 10;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #fff;
+    background: #111;
+    border: 1.25pt solid #111;
+    padding: 0.07in 0.18in;
+    cursor: pointer;
+  }
+
+  .pdf-button:hover { background: #333; }
+
+  .pdf-button:focus-visible {
+    outline: 3px solid #0000ee;
+    outline-offset: 2px;
+  }
+
   @media (max-width: 760px) {
     main { width: 100%; padding: 0.35in 0.18in; box-shadow: none; }
     body { background: var(--paper); }
@@ -255,6 +277,7 @@
   @media print {
     body { background: var(--paper); }
     main { box-shadow: none; width: auto; margin: 0; padding: 0; }
+    .pdf-button { display: none; }
     @page { size: letter; margin: 0.65in; }
     h2, h3, tr { break-inside: avoid; }
     a { color: #0000ee; }
@@ -263,6 +286,8 @@
 </head>
 <body>
 <main>
+  <button type="button" class="pdf-button" onclick="window.print()">Download as PDF</button>
+
   <h1>PHI-1012-02V: <span class="small-caps">Ethics</span></h1>
 
   <section class="intro-block">
@@ -360,7 +385,7 @@
           <td class="date-cell">8/19</td>
           <td>What is Morality?</td>
           <td>Facts &amp; Opinions</td>
-          <td><p>McBrayer — Why Our Children Don’t Think There Are Moral Facts (2015)</p><p>Skim over:<br>Shafer-Landau (2024) — <em>Living Ethics</em> Part 2: Moral Problems</p><p>Optional:<br>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 1: What Is Morality?</p><p>Metaphysics &amp; Epistemology Charts</p></td>
+          <td><p><a href="https://drive.google.com/file/d/1ecJ9FVgsnpOLqciQJkQbUHliWw5lEXgU/view?usp=drive_link">McBrayer — Why Our Children Don’t Think There Are Moral Facts (2015)</a></p><p>Skim over:<br>Shafer-Landau (2024) — <em>Living Ethics</em> Part 2: Moral Problems</p><p>Optional:<br>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 1: What Is Morality?</p><p><a href="https://drive.google.com/file/d/1cytUdPVo3nOfxmlRaA6WQwTNkRuLOaJb/view?usp=drive_link">Metaphysics &amp; Epistemology Charts</a></p></td>
           <td class="assess-cell">Participation</td>
         </tr>
         <tr class="blue">
@@ -374,21 +399,21 @@
           <td class="date-cell">8/26</td>
           <td>Moral Reasoning</td>
           <td>Inferences &amp; Reason(s)</td>
-          <td><p>Lecture Notes</p><p>Skim over:<br>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 2: Moral Reasoning</p></td>
+          <td><p><a href="https://drive.google.com/file/d/140JgCHOnpFirqbIL2g3Ao6OTHLmRtYWg/view?usp=drive_link">Lecture Notes</a></p><p>Skim over:<br>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 2: Moral Reasoning</p></td>
           <td class="assess-cell">Participation</td>
         </tr>
         <tr class="gray">
           <td class="date-cell">8/31</td>
           <td>Moral Reasoning</td>
           <td>Validity &amp; Soundness</td>
-          <td><p>Lecture Notes</p><p>Skim over:<br>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 2: Moral Reasoning</p></td>
+          <td><p><a href="https://drive.google.com/file/d/140JgCHOnpFirqbIL2g3Ao6OTHLmRtYWg/view?usp=drive_link">Lecture Notes</a></p><p>Skim over:<br>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 2: Moral Reasoning</p></td>
           <td class="assess-cell">Participation</td>
         </tr>
         <tr class="gray">
           <td class="date-cell">9/2</td>
           <td>Moral Reasoning</td>
           <td>Conditions</td>
-          <td><p>Lecture Notes</p><p>Skim over:<br>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 2: Moral Reasoning</p></td>
+          <td><p><a href="https://drive.google.com/file/d/140JgCHOnpFirqbIL2g3Ao6OTHLmRtYWg/view?usp=drive_link">Lecture Notes</a></p><p>Skim over:<br>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 2: Moral Reasoning</p></td>
           <td class="assess-cell">Participation<br><br><span class="due">Census date — last day to drop with a refund</span></td>
         </tr>
         <tr class="noclass">
@@ -399,7 +424,7 @@
           <td class="date-cell">9/9</td>
           <td>Moral Reasoning</td>
           <td>Flex</td>
-          <td>Lecture Notes</td>
+          <td><a href="https://drive.google.com/file/d/140JgCHOnpFirqbIL2g3Ao6OTHLmRtYWg/view?usp=drive_link">Lecture Notes</a></td>
           <td class="assess-cell">Participation<br>+<br>Moral Reasoning Quiz</td>
         </tr>
         <tr class="blue">
@@ -427,7 +452,7 @@
           <td class="date-cell">9/23</td>
           <td>Moral Skepticism</td>
           <td>Fish bowl discussion</td>
-          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 3: Moral Skepticism</p><p>Optional:<br>MindScape Podcast — Russ Shafer-Landau on the Reality of Morality</p></td>
+          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 3: Moral Skepticism</p><p>Optional:<br><a href="https://www.preposterousuniverse.com/podcast/2020/07/27/107-russ-shafer-landau-on-the-reality-of-morality/">MindScape Podcast — Russ Shafer-Landau on the Reality of Morality</a></p></td>
           <td class="assess-cell">Participation<br>+<br>Moral Skepticism Quiz</td>
         </tr>
         <tr class="gray">
@@ -483,7 +508,7 @@
           <td class="date-cell">10/21</td>
           <td>Consequentialism</td>
           <td>Fish bowl on consequentialism</td>
-          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 5: Consequentialism</p><p>Optional:<br>MindScape Podcast — Joshua Greene on Morality, Psychology, and Trolley Problems</p><p>MindScape Podcast — William MacAskill on Maximizing Good in the Present and Future</p></td>
+          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 5: Consequentialism</p><p>Optional:<br><a href="https://www.preposterousuniverse.com/podcast/2021/12/06/176-joshua-greene-on-morality-psychology-and-trolley-problems/">MindScape Podcast — Joshua Greene on Morality, Psychology, and Trolley Problems</a></p><p><a href="https://www.preposterousuniverse.com/podcast/2022/08/15/207-william-macaskill-on-maximizing-good-in-the-present-and-future/">MindScape Podcast — William MacAskill on Maximizing Good in the Present and Future</a></p></td>
           <td class="assess-cell">Participation<br>+<br>Consequentialism Quiz</td>
         </tr>
         <tr class="gray">
@@ -511,7 +536,7 @@
           <td class="date-cell">11/4</td>
           <td>Kantian Ethics</td>
           <td>Fishbowl discussion on Kant</td>
-          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 6: Kantian Ethics</p><p>Optional:<br>MindScape Podcast — Justin Clarke-Doane on Mathematics, Morality, Objectivity, and Reality</p></td>
+          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 6: Kantian Ethics</p><p>Optional:<br><a href="https://www.preposterousuniverse.com/podcast/2021/03/08/137-justin-clarke-doane-on-mathematics-morality-objectivity-and-reality/">MindScape Podcast — Justin Clarke-Doane on Mathematics, Morality, Objectivity, and Reality</a></p></td>
           <td class="assess-cell">Participation<br>+<br>Kant Quiz</td>
         </tr>
         <tr class="blue">
@@ -550,14 +575,14 @@
           <td class="date-cell">11/30</td>
           <td>Virtue Ethics</td>
           <td>Fishbowl on Virtue Ethics</td>
-          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 10: Virtue Ethics</p><p>Optional:<br>Kasulis (1981) — <em>Zen Action, Zen Person</em>, Chapter 9</p></td>
+          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 10: Virtue Ethics</p><p>Optional:<br><a href="https://drive.google.com/file/d/1H3-ez-YbbUwQ6XCA0ojtHwYGJ9cmv2v_/view?usp=sharing">Kasulis (1981) — <em>Zen Action, Zen Person</em>, Chapter 9</a></p></td>
           <td class="assess-cell">Participation<br>+<br>Virtue Ethics Quiz</td>
         </tr>
         <tr class="blue">
           <td class="date-cell">12/2</td>
           <td>Frontier AI Ethics</td>
           <td></td>
-          <td>Lazar (2024) — <em>Aeon</em> “Frontier AI Ethics”</td>
+          <td><a href="https://drive.google.com/file/d/1bcf_vH_W-Qi48M-H_L7U7jM1sKBxCvRK/view?usp=drive_link">Lazar (2024) — <em>Aeon</em> “Frontier AI Ethics”</a></td>
           <td class="assess-cell">Participation</td>
         </tr>
         <tr class="gray">
