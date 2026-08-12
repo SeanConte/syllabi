@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PHI-1012-70L: Ethics — Fall 2026</title>
+<style>
+  :root {
+    --paper: #ffffff;
+    --ink: #111111;
+    --rule: #111111;
+    --grid: #c7c7c7;
+    --gray-row: #f2f2f2;
+    --blue-row: #d7e4f4;
+    --break-row: #e4e4e4;
+    --highlight: #fff200;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: #f3f4f6;
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    line-height: 1.22;
+  }
+
+  main {
+    width: min(100%, 8.5in);
+    margin: 0 auto;
+    background: var(--paper);
+    padding: 0.7in 0.64in 0.65in;
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.12);
+  }
+
+  h1, h2, h3, p { margin: 0; }
+
+  h1 {
+    font-size: 18pt;
+    font-weight: 400;
+    margin: 0 0 0.34in;
+    text-decoration: underline;
+    text-decoration-thickness: 0.75pt;
+    text-underline-offset: 2px;
+  }
+
+  h1 .small-caps {
+    font-size: 0.78em;
+    font-variant: small-caps;
+    letter-spacing: 0.02em;
+  }
+
+  h2 {
+    font-size: 18pt;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0.32in 0 0.06in;
+    border-bottom: 1.25pt solid var(--rule);
+    line-height: 1.05;
+  }
+
+  h3 {
+    font-size: 14pt;
+    font-weight: 700;
+    margin: 0.28in 0 0.02in;
+  }
+
+  p { margin: 0 0 0.14in; }
+
+  a { color: #0000ee; text-decoration: underline; }
+
+  .todo {
+    background: var(--highlight);
+    font-weight: 700;
+  }
+
+  .intro-block { margin-bottom: 0.3in; }
+  .gt-heading { font-weight: 700; margin-bottom: 0; }
+
+  .welcome-title {
+    display: inline-block;
+    font-size: 16pt;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-thickness: 0.75pt;
+    text-underline-offset: 2px;
+    margin: 0.26in 0 0.04in;
+  }
+
+  .key-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 0.13in;
+  }
+
+  .key-table td {
+    padding: 0.015in 0;
+    vertical-align: top;
+  }
+
+  .key-table td:first-child {
+    width: 34%;
+    padding-right: 0.18in;
+  }
+
+  .key-table td:last-child { font-weight: 700; }
+
+  .course-description {
+    margin-left: 0.5in;
+    margin-right: 0.15in;
+  }
+
+  .section-note { font-style: italic; margin-top: -0.02in; }
+  .centered-line { text-align: center; margin-top: 0; }
+  table { border-collapse: collapse; }
+
+  .calendar {
+    width: 100%;
+    table-layout: fixed;
+    margin-top: 0.22in;
+    font-size: 8.75pt;
+    line-height: 1.16;
+  }
+
+  .calendar col.date { width: 11%; }
+  .calendar col.topic { width: 15%; }
+  .calendar col.reading { width: 27%; }
+  .calendar col.activity { width: 26%; }
+  .calendar col.assessments { width: 21%; }
+
+  .calendar th {
+    background: #000;
+    color: #fff;
+    font-weight: 400;
+    text-align: left;
+    padding: 0.06in 0.035in;
+    border: 1px solid var(--grid);
+    vertical-align: top;
+  }
+
+  .calendar th span {
+    display: inline-block;
+    margin-top: 0.03in;
+    color: #000;
+    font-size: 6.9pt;
+    font-weight: 700;
+    background: var(--highlight);
+    text-decoration: underline;
+  }
+
+  .calendar td {
+    border: 1px solid var(--grid);
+    padding: 0.055in 0.035in;
+    vertical-align: top;
+  }
+
+  .calendar tr.gray td { background: var(--gray-row); }
+  .calendar tr.blue td { background: var(--blue-row); }
+  .calendar tr.noclass td {
+    background: var(--break-row);
+    font-style: italic;
+    text-align: center;
+  }
+  .calendar tr.noclass td.date-cell { text-align: left; font-style: normal; }
+
+  .calendar .date-cell { font-weight: 700; white-space: pre-line; }
+  .calendar .assess-cell { text-align: center; }
+
+  .calendar .due {
+    display: inline;
+    font-weight: 700;
+    background: var(--highlight);
+    line-height: 1.25;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  .calendar p { margin: 0 0 0.07in; }
+  .calendar p:last-child { margin-bottom: 0; }
+
+  .attendance-callout {
+    width: 86%;
+    margin: 0.28in auto 0.36in;
+    text-align: center;
+    font-size: 14pt;
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  .grade-breakdown {
+    width: 62%;
+    margin: 0.2in 0 0.18in 0.45in;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 12.5pt;
+  }
+
+  .grade-breakdown th {
+    background: #000;
+    color: #fff;
+    text-align: left;
+    border: 1px solid #000;
+    padding: 0.025in 0.08in;
+    font-weight: 700;
+  }
+
+  .grade-breakdown td {
+    border: 1px solid #000;
+    padding: 0.025in 0.08in;
+  }
+
+  .grade-breakdown td:first-child { font-weight: 700; }
+  .grade-breakdown td.sub { font-weight: 400; padding-left: 0.3in; }
+
+  .indent-paragraph { margin-left: 0.5in; margin-right: 0.18in; }
+  .email-example { margin: 0.22in 0 0.22in 0.5in; white-space: pre-line; }
+
+  .grade-scale { width: 100%; margin: 0.18in 0 0.24in; }
+  .grade-scale td { padding: 0.01in 0.22in 0.01in 0; vertical-align: top; }
+  .grade-scale td:nth-child(1) { width: 0.4in; }
+  .grade-scale td:nth-child(2) { width: 1.5in; }
+
+  .resources ul { margin: 0.02in 0 0 0.35in; padding-left: 0.15in; }
+  .resources li { margin: 0.01in 0; }
+  .resources p { margin-bottom: 0.01in; }
+
+  .policy-list { margin: 0.02in 0 0.14in 0.35in; padding-left: 0.15in; }
+  .policy-list li { margin: 0.02in 0; }
+
+  .standard-competencies { margin: 0.06in 0 0.55in 0.48in; padding-left: 0.2in; }
+  .standard-competencies li { padding-left: 0.04in; margin-bottom: 0.02in; }
+
+  .topical-outline { margin: 0.06in 0 0.3in 0.48in; padding-left: 0.2in; }
+  .topical-outline li { margin-bottom: 0.03in; }
+
+  .document-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 0.5in;
+    color: var(--ink);
+    font-size: 11pt;
+  }
+
+  .document-footer div:last-child { text-align: right; }
+  .nowrap { white-space: nowrap; }
+
+  @media (max-width: 760px) {
+    main { width: 100%; padding: 0.35in 0.18in; box-shadow: none; }
+    body { background: var(--paper); }
+    h1 { font-size: 16pt; }
+    h2 { font-size: 15pt; }
+    .calendar { display: block; overflow-x: auto; table-layout: auto; min-width: 940px; }
+    .key-table td:first-child { width: 40%; }
+    .grade-breakdown { width: 100%; margin-left: 0; }
+    .course-description, .indent-paragraph, .email-example { margin-left: 0.18in; }
+  }
+
+  @media print {
+    body { background: var(--paper); }
+    main { box-shadow: none; width: auto; margin: 0; padding: 0; }
+    @page { size: letter; margin: 0.65in; }
+    h2, h3, tr { break-inside: avoid; }
+    a { color: #0000ee; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>PHI-1012-70L: <span class="small-caps">Ethics</span></h1>
+
+  <section class="intro-block">
+    <p>This abbreviated syllabus must be read together with the material within the Institutional Policies Module of the class D2L shell. Combined, these documents constitute the entire syllabus required for this course.</p>
+
+    <p class="gt-heading">Guaranteed Transfer (GT) Pathways Course Statement:</p>
+    <p>The Colorado Commission on Higher Education has approved PHI 1012 for inclusion in the Guaranteed Transfer (GT) Pathways program in the GT-AH3 category. For transferring students, successful completion with a minimum C‒ grade guarantees transfer and application of credit in this GT Pathways category. For more information on the GT Pathways program, go to <a href="https://highered.colorado.gov/academics/transfers/gtpathways/curriculum.html">https://highered.colorado.gov/academics/transfers/gtpathways/curriculum.html</a>.</p>
+
+    <div class="welcome-title">Welcome!</div>
+    <p>Welcome to Ethics! In this course we will be delving into core issues about values, rules, and how we should live life. When (if ever) are sacrifices permissible or even mandatory? What sorts of moral consideration do other people/animals/environments deserve? Is there a true, objective morality, or is it all subjective/relative to culture? What constraints should there be on speech, capital punishment, abortion, euthanasia, AI, or immigration (just to name a few)? In this class, we will learn about major approaches to these questions and more. More importantly, we will develop the skills to analyze and evaluate these approaches.</p>
+
+    <p>Premier quantum physicist &amp; philosopher Sean Carroll loves to point out that physics is way easier than ethics. Areas like physics are clean, clear, and under control. Ethics, on the other hand, is blurry, difficult, and extremely hard to do well. In a (sufficiently described) complicated physical system, the answer is nearly always clear. In ethics, we’ll see that that simply isn’t the case. We have to work harder. Humans comprise the most complicated systems in the (known) universe. It is no wonder that figuring out the right ways for us to live is challenging.</p>
+
+    <p>In this class, we explore some of the biggest questions in ethics and hone the skills that are required to answer them. We start with some of the most classic questions: whether morality is objective, do rules or results matter more, etc. before moving to more complicated approaches later on.</p>
+
+    <p>This is a condensed section. We cover one topic per week, and each week’s work is due at the end of that week. Because there is no slack built into the schedule, falling a week behind is difficult to recover from.</p>
+
+    <p>The <strong>number one tip for success</strong> in this class: <em>ENGAGE</em> — do the readings, watch the videos, discuss with classmates, stay up to date with D2L, and above all reach out if you run into trouble.</p>
+
+    <p><strong>There is a bonus quiz in D2L based on this syllabus.</strong> It is the best way to start on a good foot as it gives your grade an early cushion and helps you familiarize yourself with what the course will be like.</p>
+
+    <p><em>Do not hesitate to reach out</em> with questions on course logistics or content! <strong>I am here to help!</strong></p>
+  </section>
+
+  <section>
+    <h2>Course Information</h2>
+    <table class="key-table">
+      <tr><td>Course Title:</td><td>Ethics</td></tr>
+      <tr><td>Credits:</td><td>3</td></tr>
+      <tr><td>Course Description (from CCNS):</td><td></td></tr>
+    </table>
+    <p class="course-description">Examines human life, experience, and thought to discover and develop the principles and values for pursuing a more fulfilled existence. This course examines ethical theories designed to both justify moral judgments, as well as apply these ethical theories to a selection of personal and social issues in the world today. This is a statewide Guaranteed Transfer course in the GT-AH3 category.</p>
+    <table class="key-table">
+      <tr><td>Semester &amp; Year:</td><td>Fall 2026</td></tr>
+      <tr><td>Meeting Location:</td><td>Online</td></tr>
+      <tr><td>Times &amp; Days:</td><td>Asynchronous (no designated class time)</td></tr>
+      <tr><td>Start Date:</td><td>31 August</td></tr>
+      <tr><td>End Date:</td><td>7 December</td></tr>
+      <tr><td>Last date to drop with a refund:</td><td>15 September</td></tr>
+      <tr><td>Last date to withdraw:</td><td>17 November</td></tr>
+      <tr><td>Fall Holidays / Break:</td><td>7 September – Labor Day – Campus/offices closed; 23 November – 27 November – Fall Break – No coursework due, campus/offices open except Thursday, 26 November</td></tr>
+    </table>
+    <p>For details on Parts of Term, please visit: <a href="https://www.ccd.edu/docs/schedule-parts-term">Parts of Term</a>.</p>
+  </section>
+
+  <section>
+    <h2>Instructor Information</h2>
+    <table class="key-table">
+      <tr><td>Name:</td><td>Professor Sean Conte, PhD</td></tr>
+      <tr><td>E-mail:</td><td><a href="mailto:Sean.Conte@ccd.edu">Sean.Conte@ccd.edu</a></td></tr>
+      <tr><td>Office Hours &amp; Location:</td><td>M/T/W/R 2:00-3:00pm (DCHR 313E, or by Zoom)</td></tr>
+      <tr><td>Zoom link:</td><td><a href="https://cccs-edu.zoom.us/my/sean.conte">https://cccs-edu.zoom.us/my/sean.conte</a></td></tr>
+      <tr><td>Webex link:</td><td><a href="https://cccs-meetings.webex.com/meet/sean.conte1">https://cccs-meetings.webex.com/meet/sean.conte1</a></td></tr>
+      <tr><td>Arts, Communication and Design Pathway Main Phone Number:</td><td>303-352-6473</td></tr>
+    </table>
+
+    <p><strong>Course flow:</strong></p>
+    <p>Each week, you should work through the module in roughly this order: watch the video, do the reading, complete the quiz, and then participate in the discussion. The quiz is meant to help make sure the basic ideas are in place before discussion. The discussion is where you practice using those ideas with others.</p>
+  </section>
+
+  <section>
+    <h2>Required Text/Course Materials/Technology</h2>
+    <ul class="policy-list">
+      <li>Shafer-Landau, Russ. <em>Living Ethics: An Introduction with Readings.</em> (Any Edition) OUP.</li>
+      <li>A PersonifyAI.app subscription (10$ for 1 semester) will be required for writing your final paper. This is non-negotiable and must be purchased early in the semester. YOU MUST USE YOUR SCHOOL EMAIL WHEN REGISTERING. (Further instructions will be provided in class.)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Course Calendar</h2>
+    <p class="section-note">The professor has the right to adjust the content and structure of the course.</p>
+    <table class="calendar">
+      <colgroup>
+        <col class="date">
+        <col class="topic">
+        <col class="reading">
+        <col class="activity">
+        <col class="assessments">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Topic</th>
+          <th>Reading etc.</th>
+          <th>Activity</th>
+          <th>Assessments<br><span>Due Dates are Bolded &amp; Highlighted</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="gray">
+          <td class="date-cell">Week 1<br>8/31-9/4</td>
+          <td>What is Morality?</td>
+          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 1: What Is Morality?</p><p>Skim over:<br>Shafer-Landau (2024) — <em>Living Ethics</em> Part 2: Moral Problems</p></td>
+          <td>Define ethics and distinguish it from related disciplines like sociology/anthropology. Understand the basic questions for an ethical theory. Brainstorm applied questions to focus on for the final paper. Choose two tentative options to revisit throughout the semester.</td>
+          <td class="assess-cell"><span class="due">Human Proof Due 9/4 @ midnight</span><br><br>What is Morality? Quiz</td>
+        </tr>
+        <tr class="blue">
+          <td class="date-cell">Week 2<br>9/7-9/11</td>
+          <td>Moral Reasoning</td>
+          <td><p>Lecture Notes</p><p>Optional:<br>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 2: Moral Reasoning</p></td>
+          <td>Understand what logic, inferences, and arguments are.</td>
+          <td class="assess-cell">Moral Reasoning Discussion<br>+<br>Moral Reasoning Quiz</td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">Week 3<br>9/14-9/18</td>
+          <td>Moral Skepticism</td>
+          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 3: Moral Skepticism, sections on “Relativism” &amp; “Error Theory”</p><p>Optional:<br>MindScape Podcast — Russ Shafer-Landau on the Reality of Morality</p></td>
+          <td>Understand the core motivations and concerns for relativism and error theory (and the difference between the two). Apply these theories to your (potential) final topics.</td>
+          <td class="assess-cell">Moral Skepticism Discussion<br>+<br>Moral Skepticism Quiz<br><br><span class="due">9/15 — Census date; last day to drop with a refund</span></td>
+        </tr>
+        <tr class="blue">
+          <td class="date-cell">Week 4<br>9/21-9/25</td>
+          <td>The Good Life</td>
+          <td>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 4: The Good Life</td>
+          <td>Understand the ways arguments can fail, and build arguments that meet certain criteria.</td>
+          <td class="assess-cell">The Good Life Discussion<br>+<br>The Good Life Quiz</td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">Week 5<br>9/28-10/2</td>
+          <td>Consequentialism, Part 1</td>
+          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 5: Consequentialism</p><p>Optional:<br>MindScape Podcast — Joshua Greene on Morality, Psychology, and Trolley Problems</p></td>
+          <td>Distinguish utilitarianism from the larger class of consequentialist theories. Understand the core tenets of consequentialism and how outcomes get weighed. Analyze your (potential) final topics in a consequentialist lens.</td>
+          <td class="assess-cell">Consequentialism Discussion, Part 1<br>+<br>Consequentialism Quiz, Part 1</td>
+        </tr>
+        <tr class="blue">
+          <td class="date-cell">Week 6<br>10/5-10/9</td>
+          <td>Consequentialism, Part 2</td>
+          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 5: Consequentialism</p><p>Optional:<br>MindScape Podcast — William MacAskill on Maximizing Good in the Present and Future</p></td>
+          <td>Work through the standard objections: sacrifice and partiality, the trolley problems, and the argument from injustice. Evaluate how a consequentialist might answer each.</td>
+          <td class="assess-cell">Consequentialism Discussion, Part 2<br>+<br>Consequentialism Quiz, Part 2</td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">Week 7<br>10/12-10/16</td>
+          <td>Deontology, Part 1</td>
+          <td>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 6: Kantian Ethics</td>
+          <td>Distinguish Kant’s ethics from the larger class of deontologist theories. Understand fairness, universalizability, and the categorical imperative.</td>
+          <td class="assess-cell">Deontology Discussion, Part 1<br>+<br>Deontology Quiz, Part 1<br>+<br><span class="due">Start Final Paper Notes in Personify</span></td>
+        </tr>
+        <tr class="blue">
+          <td class="date-cell">Week 8<br>10/19-10/23</td>
+          <td>Deontology, Part 2</td>
+          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 6: Kantian Ethics</p><p>Optional:<br>MindScape Podcast — Justin Clarke-Doane on Mathematics, Morality, Objectivity, and Reality</p></td>
+          <td>Apply the requirement to treat persons as ends, and examine autonomy and the limits of respect. Devise rule systems with which to analyze your final paper topics.</td>
+          <td class="assess-cell">Deontology Discussion, Part 2<br>+<br>Deontology Quiz, Part 2</td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">Week 9<br>10/26-10/30</td>
+          <td>Virtue Ethics</td>
+          <td>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 10: Virtue Ethics</td>
+          <td>Distinguish knowledge-that from knowledge-how and apply that to understand virtue ethics. Evaluate different candidates for moral exemplars.</td>
+          <td class="assess-cell">Virtue Ethics Discussion<br>+<br>Virtue Ethics Quiz</td>
+        </tr>
+        <tr class="blue">
+          <td class="date-cell">Week 10<br>11/2-11/6</td>
+          <td>Social Contract Theory: Hobbes</td>
+          <td>Friend — Internet Encyclopedia of Philosophy, “Social Contract Theory”, 2a</td>
+          <td>Understand Hobbes’s foundation for government and apply it to specific practices of governments. Evaluate Hobbes’s approach for its strengths and weaknesses.</td>
+          <td class="assess-cell">Outline Review Discussion<br>+<br>Hobbes Quiz<br>+<br><span class="due">Final Paper Outline</span></td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">Week 11<br>11/9-11/13</td>
+          <td>Social Contract Theory: Locke</td>
+          <td>Friend — Internet Encyclopedia of Philosophy, “Social Contract Theory”, 2b</td>
+          <td>Understand Locke’s foundation for government and apply it to specific practices of governments. Contrast Locke’s approach with Hobbes’s.</td>
+          <td class="assess-cell">Draft Review Discussion<br>+<br>Locke Quiz<br>+<br><span class="due">Final Paper</span></td>
+        </tr>
+        <tr class="blue">
+          <td class="date-cell">Week 12<br>11/16-11/20</td>
+          <td>Social Contract Theory: Rousseau</td>
+          <td>Friend — Internet Encyclopedia of Philosophy, “Social Contract Theory”, 2c</td>
+          <td>Recall the difference between descriptive and normative theories, and understand Rousseau’s account of each. Compare each of the social contract theorists, evaluating what they do well and poorly.</td>
+          <td class="assess-cell">Social Contract Theory Discussion<br>+<br>Rousseau Quiz<br><br><span class="due">11/17 — last day to withdraw</span></td>
+        </tr>
+        <tr class="noclass">
+          <td class="date-cell">11/23-11/27</td>
+          <td colspan="4">Fall Break — No coursework due (campus/offices open except Thursday, 11/26)</td>
+        </tr>
+        <tr class="gray">
+          <td class="date-cell">Week 13<br>11/30-12/4</td>
+          <td>Frontier AI Ethics</td>
+          <td>Lazar (2024) — <em>Aeon</em> “Frontier AI Ethics”</td>
+          <td>Apply the frameworks from the whole course to a live and unsettled case. Evaluate which approaches help most where the empirical facts are still contested and the stakes are not yet clear.</td>
+          <td class="assess-cell">Frontier AI Ethics Discussion<br>+<br>Frontier AI Ethics Quiz<br><br><span class="due">Revised Final Paper Due 12/7 @ midnight</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Course Specific Policies and Information</h2>
+    <h3>Attendance</h3>
+    <p>Regular participation in all course activities is critical for academic success. Please review the <a href="https://www.ccd.edu/administration/non-academic-departments/office-registration-records/college-non-attendance-policy">College Non-Attendance Policy</a>.</p>
+
+    <p>Students establish attendance in online and real-time remote courses by completing an academic activity based on course content. As defined by the Federal Department of Education, merely logging into the course site or introducing oneself to the class does not count as attendance. Some examples of successfully attending class include participation in a content-related discussion in the D2L discussion board or in WebEx/Zoom, taking a quiz, submitting an assignment, or contacting your instructor with a content related question. Students who have not participated by 11:59 PM on the deadline date will be dropped. Similarly, the last date of academic attendance must be reported to Financial Aid for students who do not earn a D or better; students who have not been in regular attendance may experience financial aid ramifications.</p>
+
+    <p class="attendance-callout">To establish attendance in this class, you must complete the human proof assignment described below.</p>
+
+    <h3>Course Assignments</h3>
+    <p>Your grade is made up of the following categories:</p>
+    <table class="grade-breakdown">
+      <thead>
+        <tr><th>Activities</th><th>Contribution to Overall Grade</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Participation</td><td>30%</td></tr>
+        <tr><td>Quizzes</td><td>30%</td></tr>
+        <tr><td>Final Paper</td><td>40%</td></tr>
+        <tr><td class="sub">Personify Notes</td><td>10%</td></tr>
+        <tr><td class="sub">Outline &amp; Review</td><td>10%</td></tr>
+        <tr><td class="sub">Paper &amp; Review</td><td>10%</td></tr>
+        <tr><td class="sub">Revised Paper</td><td>10%</td></tr>
+      </tbody>
+    </table>
+
+    <p class="indent-paragraph"><strong>Human Proof</strong> - The first assignment is an unfortunate necessity today, but gives us a chance to have some fun. Given the rise of fraudulent (LLM backed) students, it’s important that we can weed out anyone here that doesn’t have a beating heart. For any of us to get something out of this class, we need to be able to trust we’re actually having legitimate conversations and we’re not merely wasting our time with bots. For that reason, the first assignment requires that you prove you are a human. To be clear, this assignment is ridiculously easy, if you are in fact a human. Details are in D2L. This assignment is not graded, but it is required: <em>it must be completed before any other assignment,</em> and it is how you establish attendance in this course.</p>
+
+    <p class="indent-paragraph"><strong>Participation</strong> - The participation grade is earned by actively engaging in the weekly discussion boards. These activities include the following: discussions/debates, peer writing evaluation workshops, group critical analysis sessions, and others. These are largely completion based. They are meant to be low stress ways for you to engage with others and develop your skills. (There are certain philosophical skills that are simply impossible to develop without engaging with others.) There may be situations where I’d like to discuss your posts further in a video call. There may even be situations where I’d prefer not to grade the post until we discuss it further.</p>
+
+    <p class="indent-paragraph"><strong>Quizzes</strong> - There are quizzes for every topic we cover, all of which are on D2L. These are due each week, alongside the discussion for that week. This is meant to keep you engaged with the material as we move through the course. If you wait till the deadline and some issue arises, you will very likely <em>not</em> get a mass extension on all of the quizzes.</p>
+
+    <p class="indent-paragraph">These are simple multiple choice/multi-select questions asking about the course material. These should not take you too long if you are engaging with the material. But, if you do have trouble, don’t hesitate to reach out. You have multiple attempts on each quiz specifically so that you can come ask questions when you need help finding an answer.</p>
+
+    <p class="indent-paragraph"><strong>Final Paper</strong> - The final paper is where you demonstrate the skills you’ve developed on the question you chose. It <em>is not</em> graded just on the final product, but on how you meet milestones and build on feedback through an iterative process. You will be required to start halfway through the semester, and there will be two peer review discussions (one on outlines and another on the paper itself) to help you develop your ideas and skills.</p>
+
+    <p class="indent-paragraph">To steer clear of funny business, you will be required to write the paper from start to finish inside the provided writing environment, PersonifyAI.app.</p>
+
+    <h3>Late work policies</h3>
+    <p>I grant at most one extension for an assignment, and generally speaking I do not grant mass extensions. That means if you miss submitting several weekly quizzes, then I will likely only grant an extension on one. Peer review discussions must be completed during their assigned week to receive credit, and they cannot be made up after the fact.</p>
+
+    <p>Each extension is contingent on being <em>professional</em>. As college students, you should recognize yourselves as professional students. (Anything less, and you’re not fully appreciating the level of investment you’re making.) That means I expect you to communicate timely, clearly, and respectfully. In addition, it means you have realistic standards for yourself and your instructors. I will work with you on extensions so long as you are professional in your requests and expectations. Here’s an example of a bad email:</p>
+
+    <p class="email-example">“hey I missed Thursday three weeks ago”</p>
+
+    <p>Can you spot all of the errors? The recipient isn’t addressed. There is no signature. It is not clear which class or section the student is in. The first letter isn’t capitalized, and there’s no punctuation. These are all issues that might seem small but show a lack of attention to detail and likewise a lack of respect for the recipient. Worst of all, there is no actual question. It is just a statement, meaning it is asking the recipient (i.e. the instructor) to figure out what you need and what you’re looking for. Finally, this email is way too late. If you (expect to) miss a deadline, you need to handle it as soon as possible. Here is a better approach:</p>
+
+    <p class="email-example">“Dear Dr. Conte,
+I hope this finds you well. I am in your PHI-1012-70L class. You may have noticed I was unable to submit my finished paper by the deadline on Friday (Nov 13). If possible, I would sincerely appreciate an extension to submit the assignment for full or partial credit until the following Monday (Nov 16). I understand that it is my responsibility to complete assignments by the due date and there is no guarantee that I get an extension.
+
+Thank you for your consideration and have a great day!
+Billy Pilgrim
+S0123456789”</p>
+
+    <h3>Plagiarism and Artificial Intelligence (AI)</h3>
+    <p><strong>Plagiarism.</strong> If you are having difficulty with a paper or MLA citations, please communicate with me. I’ll be glad to work with you. Plagiarism, in my view, is something students resort to when they feel desperate. If you are behind, not sure you understand the assignment, are struggling with the assignment, don’t understand how the MLA citation system works, or a similar situation, please get in touch with me. We will work one-on-one to get you back on track. This is a much better solution than turning in work which is not yours. Many students don’t always realize that in academic communities, plagiarism is a serious offense, and is grounds for failing an assignment or course and/or disciplinary action. Plagiarism means copying passages directly from the text of any source, without quotation marks and citations, or not citing summarized or paraphrased information. The written work you submit must be original: written entirely by you alone and not previously submitted in another class. All quotations, summaries and paraphrases (restatements of others’ ideas) need to be cited within your paper. No credit will be given for plagiarized papers and/or assignments. Students who plagiarize will be referred to the Provost.</p>
+
+    <p><strong>Artificial Intelligence (AI).</strong></p>
+    <p>Imagine asking someone, “Hey, I’m hungry. Could you go eat lunch for me?”. You’re not asking if they’ll bring you lunch. You’re asking that they will eat lunch and in doing so satisfy your hunger. Absurd, right? Someone else eating doesn’t do anything for your empty stomach.</p>
+
+    <p>Now imagine doing the same for learning. “Hey, I’d like to learn how to swim. Could you learn how for me?” If the only thing that happens is your friend learns how to swim, you should still steer clear of the deep end.</p>
+
+    <p>There are some things that cannot be done for you. Learning is one of these things. Your use of external resources -whatever they are- should always be done in service of your learning, helping you master the material and skills better.</p>
+
+    <p>Completing assignments with regurgitated LLM responses will not lead to you learning (nor passing).</p>
+
+    <h3>Other Policies</h3>
+    <p>The professor reserves the right to change this syllabus (and course) at any time.</p>
+  </section>
+
+  <section>
+    <h2>Grade Scale</h2>
+    <table class="grade-scale">
+      <tr><td><strong>A</strong></td><td>90-100%</td><td>Superior mastery or achievement.</td></tr>
+      <tr><td><strong>B</strong></td><td>80-89%</td><td>Better than average mastery or achievement.</td></tr>
+      <tr><td><strong>C</strong></td><td>70-79%</td><td>Acceptable mastery or achievement.</td></tr>
+      <tr><td><strong>D</strong></td><td>60-69%</td><td>Less than acceptable mastery or achievement.</td></tr>
+      <tr><td><strong>F</strong></td><td>Below 60%</td><td>Fails to demonstrate achievement of course objectives.</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Point Distribution</h2>
+    <p>This course is weighted by category rather than by a fixed point total. Your overall grade is the weighted average of the categories listed under Course Assignments above: Participation (30%), Quizzes (30%), and the Final Paper sequence (40%, split evenly across four milestones — the Personify Notes, the Outline &amp; Review, the Paper &amp; Review, and the Revised Paper). The Human Proof assignment is required but ungraded. Individual assignment point values are shown in D2L, and the D2L gradebook is configured to match these weights.</p>
+  </section>
+
+  <section>
+    <h2>Institutional Outcomes</h2>
+    <p>Graduates of the Community College of Denver are prepared to be successful on a personal, professional, and global level. For a full description of these institutional outcomes please see Institutional Policies module on this courses D2L shell.</p>
+
+    <p>In this class we will focus on:</p>
+
+    <p><strong>Effective Communication:</strong> Students will communicate a central guiding idea to a defined audience, for a concrete purpose, employing effective conventions in the service of meaning.</p>
+
+    <p><strong>Critical Thinking:</strong> Students will analyze information and ideas from multiple perspectives and articulate an argument or opinion or a conclusion based on that analysis</p>
+
+    <p><strong>Intercultural Literacy:</strong> Students will apply a set of cognitive, affective, and behavioral skills to effectively interact in a variety of cultural contexts.</p>
+  </section>
+
+  <section class="resources">
+    <h2>Student Resources</h2>
+    <p>CCD has several resources for students. See the list below and/or reach out to the instructor with any needs.</p>
+    <ul>
+      <li><strong>Online Tutoring</strong>: Sessions are available at <a href="http://ccd.edu/ExcelOnlineTutor">Excel! Zone</a></li>
+      <li><strong>Advising</strong>: Schedule a virtual appointment with academic advisors by emailing <a href="mailto:Advising@ccd.edu">Advising@ccd.edu</a></li>
+      <li><strong>IT Help Desk</strong>: Email <a href="mailto:HelpDesk@ccd.edu">HelpDesk@ccd.edu</a> or call (303) 352-3030</li>
+      <li><strong>Accessibility Center</strong>: Please reach out to your Specialist first and/or <a href="mailto:ccd.access@ccd.edu">ccd.access@ccd.edu</a></li>
+      <li><strong>Teaching &amp; Learning Center</strong>: <a href="https://ccd.yuja.com/Library/a97421c4-5504-4167-acd1-bc8dc00d79d6">D2L Introduction Videos for Students</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Standard Competencies/Outcomes</h2>
+    <ol class="standard-competencies">
+      <li>Explain major ethical concepts and describe the problems and/or issues in clarifying them that are used to comprehend and express moral or ethical problems.</li>
+      <li>Analyze major ethical theories.</li>
+      <li>Explain each major ethical theory from the perspective of a follower to identify what is significant in a particular situation or context for that theory.</li>
+      <li>Justify how each ethical theory reaches conclusions about what should be done regarding specific moral problems.</li>
+      <li>Reflect on the logical implications and consequences of the conclusions that each ethical theory reaches.</li>
+      <li>Demonstrate philosophical and/or logical thinking through writing and other forms of assessment.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Topical Outline</h2>
+    <ol class="topical-outline" type="I">
+      <li>Metaethics</li>
+      <li>Normative Ethical Theories</li>
+      <li>Applications of Ethical Theories</li>
+    </ol>
+  </section>
+
+  <footer class="document-footer">
+    <div>Revised 8/12/2026</div>
+    <div>PRO-21</div>
+  </footer>
+</main>
+</body>
+</html>
