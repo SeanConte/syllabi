@@ -154,18 +154,25 @@
 
   .calendar tr.gray td { background: var(--gray-row); }
   .calendar tr.blue td { background: var(--blue-row); }
-  .calendar tr.event-highlight td {
-    border-top: 2.5px solid #c62828;
-    border-bottom: 2.5px solid #c62828;
-  }
-  .calendar tr.event-highlight td:first-child { border-left: 2.5px solid #c62828; }
-  .calendar tr.event-highlight td:last-child { border-right: 2.5px solid #c62828; }
   .calendar tr.noclass td {
     background: var(--break-row);
     font-style: italic;
     text-align: center;
   }
   .calendar tr.noclass td.date-cell { text-align: left; font-style: normal; }
+  .calendar tr.cancelled td {
+    background: var(--break-row);
+    font-style: italic;
+    text-align: center;
+  }
+  .calendar tr.cancelled td.date-cell {
+    font-style: normal;
+    text-align: left;
+  }
+  .calendar tr.cancelled td.assess-cell {
+    font-style: normal;
+  }
+
 
   .calendar .date-cell { font-weight: 700; white-space: pre-line; }
   .calendar .assess-cell { text-align: center; }
@@ -468,24 +475,24 @@
           <td>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 4: The Good Life</td>
           <td class="assess-cell">Participation</td>
         </tr>
-        <tr class="gray event-highlight">
+        <tr class="gray">
           <td class="date-cell">9/30</td>
-          <td>Community Dialogue: CCD Mural</td>
-          <td>Discussion of CCD’s mural representing our Latine/Hispanic community and what should come next</td>
-          <td><strong>Excel! Zone, Confluence 4th Floor</strong><br><strong>12:15pm</strong></td>
+          <td>Community Dialogue</td>
+          <td>CCD Mural Conversation<br><strong>12:15pm — Confluence, 4th Floor</strong></td>
+          <td>None</td>
           <td class="assess-cell">Participation</td>
         </tr>
         <tr class="gray">
           <td class="date-cell">10/5</td>
           <td>The Good Life</td>
-          <td>Desire-satisfaction theory</td>
-          <td>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 4: The Good Life</td>
+          <td>Objective List Theory</td>
+          <td>None</td>
           <td class="assess-cell">Participation</td>
         </tr>
         <tr class="gray">
           <td class="date-cell">10/7</td>
           <td>The Good Life</td>
-          <td>Objective List Theory + Fish Bowl</td>
+          <td>Fish Bowl</td>
           <td>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 4: The Good Life</td>
           <td class="assess-cell">Participation<br>+<br>Value Theory Quiz</td>
         </tr>
@@ -564,7 +571,7 @@
           <td>Virtue Ethics</td>
           <td>Moral Exemplars &amp; Pluralism versus Subjectivity</td>
           <td>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 10: Virtue Ethics</td>
-          <td class="assess-cell">Participation</td>
+          <td class="assess-cell">Participation<br>+<br>Virtue Ethics Quiz</td>
         </tr>
         <tr class="blue">
           <td class="date-cell">11/18</td>
@@ -577,19 +584,15 @@
           <td class="date-cell">11/23<br>11/25</td>
           <td colspan="4">Fall Break — No classes (campus/offices open except Thursday, 11/26)</td>
         </tr>
-        <tr class="gray">
+        <tr class="cancelled">
           <td class="date-cell">11/30</td>
-          <td>Virtue Ethics</td>
-          <td>Fishbowl on Virtue Ethics</td>
-          <td><p>Shafer-Landau (2024) — <em>Living Ethics</em> Chapter 10: Virtue Ethics</p><p>Optional:<br><a href="https://drive.google.com/file/d/1H3-ez-YbbUwQ6XCA0ojtHwYGJ9cmv2v_/view?usp=sharing">Kasulis (1981) — <em>Zen Action, Zen Person</em>, Chapter 9</a></p></td>
-          <td class="assess-cell">Participation<br>+<br>Virtue Ethics Quiz</td>
+          <td colspan="3">Class canceled</td>
+          <td class="assess-cell"></td>
         </tr>
-        <tr class="blue">
+        <tr class="cancelled">
           <td class="date-cell">12/2</td>
-          <td>Frontier AI Ethics</td>
-          <td></td>
-          <td><a href="https://drive.google.com/file/d/1bcf_vH_W-Qi48M-H_L7U7jM1sKBxCvRK/view?usp=drive_link">Lazar (2024) — <em>Aeon</em> “Frontier AI Ethics”</a></td>
-          <td class="assess-cell">Participation</td>
+          <td colspan="3">Class canceled</td>
+          <td class="assess-cell"></td>
         </tr>
         <tr class="gray">
           <td class="date-cell">12/7</td>
@@ -633,7 +636,7 @@
 
     <p class="indent-paragraph"><strong>Participation</strong> - The participation grade is earned by actively engaging in the daily in-class activities. These activities include the following: class discussions/debates, peer writing evaluation workshops, group critical analysis sessions, and others.</p>
 
-    <p class="indent-paragraph"><strong>Participation Hold</strong> - Students who miss a significant amount of class participation may be placed on a participation hold. While on a participation hold, you will not be able to complete course quizzes. To have the hold removed, you must meet with me to discuss your participation and commit to attending and participating in every remaining class, barring emergencies or other excused circumstances.</p>
+    <p class="indent-paragraph"><strong>Participation Hold</strong> - Students who miss a significant amount of class participation may be placed on a participation hold. While on a participation hold, you will not have access to course quizzes or the final paper. To have the hold removed, you must schedule and attend an in-person appointment with me to discuss your participation and any quizzes you have already completed, attend class for at least three weeks with no unexcused absences, and commit to attending and participating in every remaining class, barring emergencies or other excused circumstances. Removal of the hold does not guarantee retroactive access to previous quizzes.</p>
 
     <p class="indent-paragraph"><strong>Quizzes</strong> - There are quizzes for every topic we cover, all of which are on D2L. These are due at the end of their respective units. This is meant to allow you significant flexibility, but you still need to stay up to date on them. If you wait till the deadline and some issue arises, you will very likely <em>not</em> get a mass extension on all of the quizzes.</p>
 
@@ -649,7 +652,7 @@
     <p>Can you spot all of the errors? The recipient isn’t addressed. There is no signature. It is not clear which class or section the student is in. The first letter isn’t capitalized, and there’s no punctuation. These are all issues that might seem small but show a lack of attention to detail and likewise a lack of respect for the recipient. Worst of all, there is no actual question. It is just a statement, meaning it is asking the recipient (i.e. the instructor) to figure out what you need and what you’re looking for. Finally, this email is way too late. If you (expect to) miss a deadline, you need to handle it as soon as possible. Here is a better approach:</p>
 
     <p class="email-example">“Dear Dr. Conte,
-I hope this finds you well. I am in your PHI-1012-001 class. You may have noticed I was unable to submit my finished paper by the deadline on Monday (Nov 30). If possible, I would sincerely appreciate an extension to submit the assignment for full or partial credit until the following Wednesday (Dec 2). I understand that it is my responsibility to complete assignments by the due date and there is no guarantee that I get an extension.
+I hope this finds you well. I am in your PHI-1012-001 class. You may have noticed I was unable to submit my finished paper by the deadline on Wednesday (Nov 18). If possible, I would sincerely appreciate an extension to submit the assignment for full or partial credit until the following Friday (Nov 20). I understand that it is my responsibility to complete assignments by the due date and there is no guarantee that I get an extension.
 
 Thank you for your consideration and have a great day!
 Billy Pilgrim
