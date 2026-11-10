@@ -160,6 +160,19 @@
     text-align: center;
   }
   .calendar tr.noclass td.date-cell { text-align: left; font-style: normal; }
+  .calendar tr.cancelled td {
+    background: var(--break-row);
+    font-style: italic;
+    text-align: center;
+  }
+  .calendar tr.cancelled td.date-cell {
+    font-style: normal;
+    text-align: left;
+  }
+  .calendar tr.cancelled td.assess-cell {
+    font-style: normal;
+  }
+
 
   .calendar .date-cell { font-weight: 700; white-space: pre-line; }
   .calendar .assess-cell { text-align: center; }
@@ -574,18 +587,14 @@
           <td class="date-cell">11/24<br>11/26</td>
           <td colspan="4">Fall Break &mdash; No classes (campus/offices open except Thursday, 11/26)</td>
         </tr>
-        <tr class="gray">
+        <tr class="cancelled">
           <td class="date-cell">12/1</td>
-          <td>Social &amp; Network Epistemology</td>
-          <td>Network Epistemology</td>
-          <td>None</td>
-          <td class="assess-cell">Participation</td>
+          <td colspan="3">Class canceled</td>
+          <td class="assess-cell"></td>
         </tr>
-        <tr class="blue">
+        <tr class="cancelled">
           <td class="date-cell">12/3</td>
-          <td>Final Discussion (optional day)</td>
-          <td></td>
-          <td>None</td>
+          <td colspan="3">Class canceled</td>
           <td class="assess-cell"><span class="due">Revised Final Paper</span></td>
         </tr>
       </tbody>
@@ -600,6 +609,9 @@
     <p>Students establish attendance by completing an academic activity based on course content. As defined by the Federal Department of Education, merely logging into the course site or introducing oneself to the class does not count as attendance. Some examples of successfully attending class include participation in a content-related discussion in class or in the D2L discussion board, taking a quiz, submitting an assignment, or contacting your instructor with a content related question. Students who have not participated by 11:59 PM on the deadline date will be dropped. Similarly, the last date of academic attendance must be reported to Financial Aid for students who do not earn a D or better; students who have not been in regular attendance may experience financial aid ramifications.</p>
 
     <p>See participation below.</p>
+
+    <h3>No Screens Policy</h3>
+    <p>No screens are permitted in class, including phones, tablets, laptops, and similar devices. This policy directly affects your participation grade. Generally, I will not interrupt class to ask you to put a device away; instead, I will simply deduct participation points. If you have an accommodation that requires use of a device, we will work together to determine an appropriate arrangement.</p>
 
     <h3>Course Assignments</h3>
     <p>Your grade is made up of the following categories:</p>
@@ -636,7 +648,7 @@
     <p>Can you spot all of the errors? The recipient isn&rsquo;t addressed. There is no signature. It is not clear which class or section the student is in. The first letter isn&rsquo;t capitalized, and there&rsquo;s no punctuation. These are all issues that might seem small but show a lack of attention to detail and likewise a lack of respect for the recipient. Worst of all, there is no actual question. It is just a statement, meaning it is asking the recipient (i.e. the instructor) to figure out what you need and what you&rsquo;re looking for. Finally, this email is way too late. If you (expect to) miss a deadline, you need to handle it as soon as possible. Here is a better approach:</p>
 
     <p class="email-example">&ldquo;Dear Dr. Conte,
-I hope this finds you well. I am in your PHI-1011-004 class. You may have noticed I was unable to submit my finished paper by the deadline on Thursday (Nov 19). If possible, I would sincerely appreciate an extension to submit the assignment for full or partial credit until the following Tuesday (Dec 1). I understand that it is my responsibility to complete assignments by the due date and there is no guarantee that I get an extension.
+I hope this finds you well. I am in your PHI-1011-004 class. You may have noticed I was unable to submit my finished paper by the deadline on Thursday (Nov 19). If possible, I would sincerely appreciate an extension to submit the assignment for full or partial credit until the following Friday (Nov 20). I understand that it is my responsibility to complete assignments by the due date and there is no guarantee that I get an extension.
 
 Thank you for your consideration and have a great day!
 Billy Pilgrim
